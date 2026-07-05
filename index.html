@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LagoNord AI — Ihr KI-Partner am Gardasee</title>
+<meta name="description" content="LagoNord AI ist Ihr KI-Partner am Gardasee. Fertige KI-Assistenten für Immobilien, Tourismus und Hotellerie — Done-for-you eingerichtet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bianco:#FFFFFF;--rosa:#E9CFC1;--rosa-soft:#F2E2D8;--malva:#A5786B;
+  --cioccolato:#5C4033;--cioccolato-deep:#4A332A;--rame:#C9906F;
+  --ink:#2B2B2B;--ink-soft:#575757;
+  --ink-on-dark:rgba(255,255,255,.92);--ink-on-dark-soft:rgba(255,255,255,.72);
+  --nero:#161616;--f:'Poppins',ui-sans-serif,system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.9,.2,1);--r-card:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bianco);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-left:24px;padding-right:24px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--malva)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:50;background:var(--bianco);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav-inner{max-width:1080px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;font-size:20px;text-decoration:none;letter-spacing:-.01em}
+.logo span{color:var(--rame)}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--ink-soft);transition:color 180ms var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--nero);color:#fff!important;padding:10px 22px;border-radius:999px;font-weight:600;transition:opacity 180ms var(--ease)}
+.nav-cta:hover{opacity:.82}
+/* lang switch */
+.lang{display:flex;gap:2px;border:1px solid rgba(0,0,0,.14);border-radius:999px;padding:3px;background:#fff}
+.lang button{
+  border:0;background:none;cursor:pointer;font-family:var(--f);
+  font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--ink-soft);
+  padding:5px 11px;border-radius:999px;transition:background 160ms var(--ease),color 160ms var(--ease);
+}
+.lang button.active{background:var(--nero);color:#fff}
+.lang button:hover:not(.active){color:var(--ink)}
+@media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+@media(max-width:460px){.nav-cta{display:none}}
+.hero{background:var(--rosa);padding:72px 0 80px}
+h1{font-weight:700;font-size:clamp(34px,5.6vw,56px);line-height:1.16;letter-spacing:-.02em;max-width:19ch}
+.hero-lede{margin-top:22px;font-size:19px;font-weight:500;color:var(--ink);max-width:34ch;line-height:1.55}
+.hero-sub{margin-top:12px;font-size:15px;color:var(--ink-soft);max-width:52ch}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:15px 32px;border-radius:999px;transition:opacity 180ms var(--ease),transform 180ms var(--ease)}
+.btn-dark{background:var(--nero);color:#fff}
+.btn-dark:hover{opacity:.85;transform:translateY(-1px)}
+.btn-line{border:2px solid var(--nero);color:var(--nero)}
+.btn-line:hover{background:var(--nero);color:#fff}
+.hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
+.hero-visual{position:relative;border-radius:var(--r-card);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(145deg,var(--rosa-soft),var(--rame))}
+.hero-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+section{padding:76px 0}
+h2{font-weight:700;font-size:clamp(26px,4vw,38px);line-height:1.2;letter-spacing:-.015em;margin-top:10px}
+.sec-head{max-width:62ch;margin-bottom:44px}
+.sec-sub{margin-top:14px;color:var(--ink-soft);font-size:16px}
+.asst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:860px){.asst-grid{grid-template-columns:1fr}}
+.asst{border-radius:var(--r-card);overflow:hidden;background:var(--cioccolato);color:var(--ink-on-dark);display:flex;flex-direction:column;position:relative;transition:transform 300ms var(--ease),box-shadow 300ms var(--ease)}
+.asst:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(92,64,51,.28)}
+.asst.soon{background:var(--cioccolato-deep);border:1px dashed rgba(201,144,111,.5)}
+.asst.soon:hover{transform:translateY(-2px)}
+.asst .badge{position:absolute;top:16px;right:16px;z-index:2;background:var(--rame);color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+.asst .visual{position:relative;height:340px;background:#EFE6DA;overflow:hidden}
+.asst .visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.asst .visual .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.asst .visual .ph{font-size:46px}
+.asst .body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.asst h3{font-size:20px;font-weight:700;line-height:1.3}
+.asst h3 b{color:var(--rame)}
+.asst .for{font-size:13px;color:var(--ink-on-dark-soft);margin:4px 0 14px;font-weight:500}
+.asst p{font-size:14px;color:var(--ink-on-dark-soft);line-height:1.65;flex:1}
+.asst .cta{margin-top:20px;display:inline-block;text-decoration:none;background:#fff;color:var(--nero);font-weight:600;font-size:14px;padding:11px 24px;border-radius:999px;align-self:flex-start;transition:opacity 180ms var(--ease)}
+.asst .cta:hover{opacity:.85}
+.demo{background:var(--bianco)}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:820px){.demo-grid{grid-template-columns:1fr}}
+.chat{background:var(--rosa-soft);border-radius:var(--r-card);padding:26px;display:flex;flex-direction:column;gap:12px}
+.chat .who{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--malva);margin-bottom:2px}
+.msg{max-width:88%;padding:13px 18px;border-radius:16px;font-size:14px;line-height:1.55}
+.msg.guest{background:#fff;border-bottom-left-radius:4px;align-self:flex-start}
+.msg.ai{background:var(--cioccolato);color:var(--ink-on-dark);border-bottom-right-radius:4px;align-self:flex-end}
+.msg.ai b{color:var(--rame)}
+.chat .note{margin-top:8px;font-size:12px;color:var(--ink-soft);text-align:center;font-style:italic}
+.demo-copy h2{max-width:16ch}
+.demo-copy p{margin-top:14px;color:var(--ink-soft);font-size:15px;max-width:48ch}
+.demo-copy .btn{margin-top:26px}
+.dfy{background:var(--rosa)}
+.dfy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:820px){.dfy-grid{grid-template-columns:1fr}}
+.dfy-step{background:#fff;border-radius:var(--r-card);padding:30px 26px}
+.dfy-step .n{width:42px;height:42px;border-radius:50%;background:var(--rosa);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;color:var(--cioccolato);margin-bottom:18px}
+.dfy-step h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.dfy-step p{font-size:14px;color:var(--ink-soft);line-height:1.65}
+.pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+@media(max-width:820px){.pr-grid{grid-template-columns:1fr;gap:28px}}
+.pr h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.pr p{font-size:14px;color:var(--ink-soft);line-height:1.65}
+.pr .bar{width:44px;height:4px;border-radius:2px;background:var(--rame);margin-bottom:16px}
+.team-strip{display:flex;gap:16px;flex-wrap:wrap}
+.tm{display:flex;align-items:center;gap:16px;background:var(--rosa-soft);border-radius:999px;padding:12px 28px 12px 12px}
+.tm .av{width:46px;height:46px;border-radius:50%;background:var(--malva);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
+.tm:nth-child(2) .av{background:var(--cioccolato)}
+.tm:nth-child(3) .av{background:var(--rame)}
+.tm .nm{font-weight:600;font-size:15px}
+.tm .rl{font-size:11px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.team-note{margin-top:24px;font-size:14px;color:var(--ink-soft)}
+.team-note a{color:var(--malva);font-weight:600;text-decoration:none}
+.team-note a:hover{text-decoration:underline}
+.faq{max-width:760px}
+.faq details{border-bottom:1px solid rgba(0,0,0,.09);padding:20px 0}
+.faq summary{cursor:pointer;font-size:17px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::after{content:'+';font-size:22px;font-weight:400;color:var(--rame);transition:transform 300ms var(--ease);flex-shrink:0}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:12px;font-size:14.5px;color:var(--ink-soft);max-width:62ch;line-height:1.65}
+.contact{background:var(--rosa);border-radius:var(--r-card);padding:56px 48px;text-align:center}
+@media(max-width:640px){.contact{padding:40px 26px}}
+.contact p{margin:14px auto 0;max-width:48ch;color:var(--ink-soft)}
+.contact .btn{margin-top:30px}
+.contact .mail{margin-top:16px;font-size:14px;color:var(--ink-soft)}
+.contact .mail a{color:var(--cioccolato);font-weight:600;text-decoration:none}
+footer{padding:36px 0 48px;font-size:13px;color:var(--ink-soft)}
+.foot-inner{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--ink-soft);text-decoration:none;font-weight:500}
+footer a:hover{color:var(--ink)}
+.av-img{width:92px;height:92px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 6px 18px -6px rgba(0,0,0,.3)}
+/* ambient hero */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-180px;right:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(201,144,111,.35),transparent 65%);animation:drift 14s ease-in-out infinite alternate;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-220px;left:-120px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.5),transparent 62%);animation:drift 18s ease-in-out infinite alternate-reverse;pointer-events:none}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-46px,32px) scale(1.12)}}
+.hero .wrap{position:relative;z-index:1}
+.cplay .pm,.cplay .msg,.cplay .rec-card{opacity:0;transform:translateY(10px);transition:opacity .38s cubic-bezier(.2,.9,.2,1),transform .38s cubic-bezier(.2,.9,.2,1)}
+.cplay .pm.on,.cplay .msg.on,.cplay .rec-card.on{opacity:1;transform:none}
+.typing-ind{display:flex;gap:4px;padding:9px 13px;border-radius:13px;background:#fff;border:1px solid rgba(26,37,64,.12);align-self:flex-start;width:max-content}
+.typing-ind i{width:6px;height:6px;border-radius:50%;background:#9AA1B0;display:block;animation:tb 1.1s ease-in-out infinite}
+.typing-ind i:nth-child(2){animation-delay:.16s}.typing-ind i:nth-child(3){animation-delay:.32s}
+@keyframes tb{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+.w-body .typing-ind{align-self:flex-end;background:var(--cioccolato);border-color:transparent}
+.w-body .typing-ind i{background:rgba(255,255,255,.7)}
+.pipe-step{opacity:.35;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.9,.2,1)}
+.pipe-step.lit{opacity:1;transform:translateY(-2px)}
+.pipe-step.lit .pn{background:var(--rame);box-shadow:0 6px 18px -6px rgba(201,144,111,.8)}
+.pn{transition:background .4s ease,box-shadow .4s ease}
+@media(prefers-reduced-motion:reduce){
+  .hero::before,.hero::after{animation:none}
+  .cplay .pm,.cplay .msg,.cplay .rec-card{opacity:1;transform:none}
+  .pipe-step{opacity:1}
+}
+/* browser mockup + pipeline */
+.browser{width:100%;max-width:560px;border-radius:14px;overflow:hidden;box-shadow:0 34px 80px -30px rgba(0,0,0,.35);border:1px solid rgba(0,0,0,.08);background:#fff;justify-self:end}
+@media(max-width:820px){.browser{justify-self:stretch}}
+.b-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#EFEAE4;border-bottom:1px solid rgba(0,0,0,.06)}
+.tl{width:11px;height:11px;border-radius:50%;background:#E8695A;display:block}
+.tl.y{background:#F0BE4C}.tl.g{background:#67B868}
+.b-url{margin-left:10px;flex:1;max-width:280px;padding:5px 14px;border-radius:8px;background:#fff;font-family:monospace;font-size:10px;color:#8A8378;letter-spacing:.04em}
+.b-page{position:relative;background:#FBF9F6;min-height:400px;padding:16px 16px 14px}
+.b-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.b-logo{font-size:13px;font-weight:500;color:#6B6459}
+.b-logo b{font-weight:700;color:#2B2B2B}
+.b-links{display:flex;gap:8px}
+.b-links span{width:34px;height:7px;border-radius:4px;background:#E4DED5;display:block}
+.b-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.b-card{background:#fff;border-radius:10px;padding:8px;border:1px solid rgba(0,0,0,.05)}
+.b-img{height:56px;border-radius:7px;background:linear-gradient(135deg,#C9D8D5,#8FAFA4)}
+.b-img.i2{background:linear-gradient(135deg,#E7D3C6,#C9906F)}
+.b-img.i3{background:linear-gradient(135deg,#DDE2CC,#A4B582)}
+.b-l1{height:7px;border-radius:4px;background:#E9E4DB;margin-top:8px;width:80%}
+.b-l2{height:7px;border-radius:4px;background:#F0ECE4;margin-top:5px;width:55%}
+.widget{position:absolute;right:14px;bottom:14px;width:74%;max-width:330px;background:#fff;border-radius:16px;box-shadow:0 24px 60px -18px rgba(26,37,64,.4);border:1px solid rgba(0,0,0,.07);overflow:hidden}
+.w-head{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--cioccolato);color:#fff}
+.w-av{width:30px;height:30px;border-radius:50%;background:var(--rame);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.w-n{font-size:13px;font-weight:700;line-height:1.1}
+.w-k{font-size:9px;opacity:.75;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+.w-dot{margin-left:auto;width:8px;height:8px;border-radius:50%;background:#7BC47F;box-shadow:0 0 7px #7BC47F}
+.w-body{padding:12px;display:flex;flex-direction:column;gap:9px;max-height:280px;overflow:hidden}
+.w-body .msg{max-width:88%;padding:9px 13px;border-radius:13px;font-size:11px;line-height:1.45}
+.w-body .msg.guest{background:#F2E9E1;color:#2B2B2B;align-self:flex-start;border-bottom-left-radius:4px}
+.w-body .msg.ai{background:var(--cioccolato);color:rgba(255,255,255,.94);align-self:flex-end;border-bottom-right-radius:4px}
+.w-body .msg.ai b{color:var(--rame)}
+.pipe{margin-top:34px;padding:22px 26px;border-radius:var(--r-card);background:var(--rosa-soft);border:1px solid rgba(0,0,0,.05)}
+.pipe-title{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--malva);margin-bottom:16px}
+.pipe-steps{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pipe-step{display:flex;gap:10px;align-items:flex-start;flex:1;min-width:160px}
+.pn{width:26px;height:26px;border-radius:50%;background:var(--cioccolato);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pipe-step b{display:block;font-size:13px;font-weight:700}
+.pipe-step span{display:block;font-size:11.5px;color:var(--ink-soft);line-height:1.45;margin-top:2px}
+.pipe-arrow{color:var(--rame);font-weight:700;font-size:16px}
+@media(max-width:820px){.pipe-arrow{display:none}}
+.rec-card{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:13px;background:#fff;border:1px solid rgba(26,37,64,.12);box-shadow:0 8px 22px -14px rgba(26,37,64,.3)}
+.rc-ic{width:30px;height:30px;border-radius:50%;background:#1F6F8B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.rc-t{font-size:11.5px;font-weight:700;color:#1A2540}
+.rc-s{font-family:monospace;font-size:8px;color:#9AA1B0;margin-top:1px}
+.wl{padding:8px 16px}
+/* lagostay showcase */
+.stay{background:var(--bianco);padding:76px 0}
+.stay-grid{display:grid;grid-template-columns:1fr auto;gap:52px;align-items:center}
+@media(max-width:920px){.stay-grid{grid-template-columns:1fr;justify-items:center}}
+.stay-copy h2{max-width:17ch}
+.stay-copy>p{margin-top:14px;color:var(--ink-soft);font-size:15px;max-width:48ch}
+.wl-trio{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.wl{display:flex;align-items:center;gap:9px;padding:8px 16px 8px 8px;border:1px solid rgba(0,0,0,.1);border-radius:999px;background:var(--rosa-soft)}
+.wl .g{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+.wl span{font-size:12.5px;font-weight:600}
+.wl-note{margin-top:12px;font-size:13px;color:var(--ink-soft);font-weight:500}
+.stay-copy .btn{margin-top:26px}
+.phone{width:320px;height:640px;border-radius:44px;background:#141414;padding:9px;box-shadow:0 40px 90px -30px rgba(0,0,0,.4);flex-shrink:0}
+.phone .scr{width:100%;height:100%;border-radius:36px;overflow:hidden;position:relative;background:#F7F4EC;display:flex;flex-direction:column;font-family:'Poppins',sans-serif}
+.pill{align-self:center;margin-top:12px;display:flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:rgba(255,255,255,.75);border:1px solid rgba(26,37,64,.12);flex-shrink:0}
+.pill i{width:6px;height:6px;border-radius:50%;background:#5C6B3A;display:block}
+.pill span{font-family:monospace;font-size:8.5px;letter-spacing:.1em;color:#6B7388}
+.ph-head{display:flex;align-items:center;gap:9px;padding:12px 16px;border-bottom:1px solid rgba(26,37,64,.1);background:rgba(255,255,255,.72);margin-top:8px}
+.ph-head .g{width:32px;height:32px;border-radius:50%;background:#1F6F8B;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;font-family:Georgia,serif}
+.ph-head .n{font-size:13.5px;font-weight:700;color:#1A2540;line-height:1.1}
+.ph-head .k{font-family:monospace;font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:#9AA1B0;margin-top:2px}
+.ph-head .lv{margin-left:auto;display:flex;align-items:center;gap:4px;font-family:monospace;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:#9AA1B0}
+.ph-head .lv i{width:6px;height:6px;border-radius:50%;background:#5C6B3A;box-shadow:0 0 6px #5C6B3A;display:block}
+.ph-chat{flex:1;overflow:hidden;padding:14px 14px 8px;display:flex;flex-direction:column;gap:9px}
+.pm{max-width:84%;padding:8px 12px;border-radius:14px;font-size:11px;line-height:1.45}
+.pm.g{align-self:flex-end;background:#1F6F8B;color:#fff;border-bottom-right-radius:4px}
+.pm.c{align-self:flex-start;background:#fff;border:1px solid rgba(26,37,64,.1);color:#1A2540;border-bottom-left-radius:4px}
+.handoff{border-radius:16px;background:linear-gradient(168deg,#FAF5E8,#F3E7CE);border:1px solid rgba(229,168,58,.4);box-shadow:0 18px 44px -20px rgba(181,67,39,.4);padding:13px 13px 14px;position:relative;overflow:hidden}
+.handoff::before{content:'';position:absolute;top:-34px;right:-26px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(229,168,58,.32),transparent 68%)}
+.orb{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 36% 32%,#FFEFC2 0%,#E5A83A 50%,#B54327 100%);box-shadow:inset -2px -2px 5px rgba(142,50,22,.45),0 2px 7px rgba(181,67,39,.35);flex-shrink:0}
+.handoff .hh{display:flex;align-items:center;gap:8px;position:relative}
+.handoff .hn{font-family:Georgia,serif;font-weight:700;font-size:13px;color:#1A2540}
+.handoff .hs{font-family:monospace;font-size:6.5px;letter-spacing:.16em;text-transform:uppercase;color:#B54327;margin-top:2px}
+.handoff .hq{font-family:Georgia,serif;font-style:italic;font-size:11px;line-height:1.45;color:#1A2540;margin-top:8px;position:relative}
+.handoff .hq em{color:#B54327}
+.handoff .hcta{margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px;border-radius:100px;background:#B54327;color:#fff;font-size:11px;font-weight:600;position:relative}
+.ph-note{text-align:center;font-family:monospace;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:#5C6B3A;padding:2px 0}
+.ph-foot{padding:8px 12px 12px;border-top:1px solid rgba(26,37,64,.08);background:rgba(255,255,255,.85)}
+.ph-input{display:flex;gap:8px;align-items:center}
+.ph-input .f{flex:1;padding:8px 14px;border-radius:100px;border:1px solid rgba(26,37,64,.12);background:#fff;font-size:10px;color:#9AA1B0}
+.ph-input .s{width:30px;height:30px;border-radius:50%;background:#1F6F8B;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+.ph-pow{text-align:center;margin-top:6px;font-family:monospace;font-size:7px;letter-spacing:.14em;text-transform:uppercase;color:#9AA1B0}
+.ph-pow em{font-family:Georgia,serif;font-style:italic;text-transform:none;font-size:9px;color:#6B7388;letter-spacing:0;margin-left:4px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 600ms var(--ease),transform 600ms var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#" style="display:flex;align-items:center;gap:10px">
+      <img src="assets/logo.jpg" alt="" style="width:38px;height:38px;border-radius:50%;object-fit:cover;box-shadow:0 4px 12px -4px rgba(165,106,75,.5)" onerror="this.style.display='none'">
+      <span>LagoNord <span style="color:var(--rame)">AI</span></span>
+    </a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#assistenten" data-i18n="nav_products">Assistenten</a>
+        <a href="#lagostay">LagoStay</a>
+        <a href="#ablauf" data-i18n="nav_how">So läuft's</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#team" data-i18n="nav_team">Team</a>
+        <a class="nav-cta" href="#kontakt" data-i18n="nav_cta">Jetzt informieren</a>
+      </div>
+      <div class="lang" role="group" aria-label="Sprache / Lingua / Language">
+        <button data-lang="de" class="active">DE</button>
+        <button data-lang="it">IT</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Peschiera del Garda · Italia</span>
+      <h1 style="margin-top:12px" data-i18n="hero_h1">LagoNord AI ist Ihr KI‑Partner am Gardasee.</h1>
+      <p class="hero-lede" data-i18n="hero_lede">Fertige KI-Assistenten für Immobilien, Tourismus &amp; Hotellerie — „Done-for-you" eingerichtet.</p>
+      <p class="hero-sub" data-i18n="hero_sub">Sie führen Ihren Betrieb. Wir bauen den Assistenten, der Ihre Anfragen beantwortet, qualifiziert und vorsortiert — auf Deutsch, Italienisch und Englisch.</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="#kontakt" data-i18n="hero_cta1">Jetzt informieren</a>
+        <a class="btn btn-line" href="#assistenten" data-i18n="hero_cta2">Assistenten ansehen</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/hero.jpg" alt="Gardasee" onerror="this.parentElement.innerHTML='<div style=\'font-size:56px\'>🌊</div>'">
+    </div>
+  </div>
+</div>
+
+<section id="assistenten" class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow" data-i18n="asst_eyebrow">Unsere Assistenten</span>
+    <h2 data-i18n="asst_h2">Jede Branche hat andere Anfragen — wählen Sie den passenden Assistenten für Ihren Betrieb.</h2>
+  </div>
+  <div class="asst-grid">
+    <div class="asst reveal">
+      <div class="visual"><img src="assets/lagoestate.jpg" alt="LagoEstate" onerror="this.outerHTML='<div class=&quot;ph&quot;>🏠</div>'"></div>
+      <div class="body">
+        <h3>Lago<b>Estate</b></h3>
+        <div class="for" data-i18n="estate_for">Für Immobilien-Agenturen &amp; Bauträger</div>
+        <p data-i18n="estate_p">Qualifiziert Ihre Immobilien-Anfragen 24/7 auf Deutsch, Italienisch und Englisch. Budget, Zeitrahmen, Ernsthaftigkeit — vorsortiert, bevor Ihr Makler den Hörer abnimmt.</p>
+        <a class="cta" href="mailto:info@lagonord.de?subject=LagoEstate" data-i18n="estate_cta">Mehr erfahren</a>
+      </div>
+    </div>
+    <div class="asst reveal">
+      <div class="visual"><img src="assets/lagostay.jpg" alt="LagoStay" onerror="this.outerHTML='<div class=&quot;ph&quot;>🛎️</div>'"></div>
+      <div class="body">
+        <h3>Lago<b>Stay</b></h3>
+        <div class="for" data-i18n="stay_for">Für Hotels &amp; Gastgeber</div>
+        <p data-i18n="stay_p">Der digitale Concierge im Hotelzimmer. QR-Code scannen, Fragen stellen, hauseigene Empfehlungen erhalten — in der Sprache Ihres Gastes, rund um die Uhr. Nutzt dieselbe Engine wie unsere App Garda Unica und führt Ihre Gäste direkt zu den besten Orten am See.</p>
+        <a class="cta" href="mailto:info@lagonord.de?subject=LagoStay" data-i18n="stay_cta">Pilot anfragen</a>
+      </div>
+    </div>
+    <div class="asst reveal">
+      <div class="visual"><img src="assets/gardaunica.jpg" alt="Garda Unica" onerror="this.outerHTML='<div class=&quot;ph&quot;>🧭</div>'"></div>
+      <div class="body">
+        <h3>Garda <b>Unica</b></h3>
+        <div class="for" data-i18n="unica_for">Für Gäste am Südufer</div>
+        <p data-i18n="unica_p">Unser eigenes Consumer-Produkt: der KI-Reisebegleiter für den südlichen Gardasee. Eine Empfehlung pro Moment, ehrliche Crowd-Daten, lokales Wissen. Start: Sommer 2026.</p>
+        <a class="cta" href="https://www.gardaunica.com" rel="noopener" data-i18n="unica_cta">Zur App-Seite</a>
+      </div>
+    </div>
+    <div class="asst soon reveal">
+      <span class="badge" data-i18n="soon_badge">In Kürze</span>
+      <div class="visual"><img src="assets/lagosocial.jpg" alt="LagoSocial" onerror="this.outerHTML='<div class=&quot;ph&quot;>📸</div>'"></div>
+      <div class="body">
+        <h3>Lago<b>Social</b></h3>
+        <div class="for" data-i18n="social_for">Für Hotels &amp; Gastgeber</div>
+        <p data-i18n="social_p">Ein Agent, der aus Ihrem Haus automatisch Social-Media-Content erstellt: Sonnenuntergangs-Posts, lokale Event-Tipps, saisonale Angebote — mit dem Gardasee-Wissen, das nur wir haben. Sie geben frei, der Agent liefert die Entwürfe.</p>
+        <a class="cta" href="mailto:info@lagonord.de?subject=Interesse%20LagoSocial" data-i18n="social_cta">Interesse anmelden</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo wrap">
+  <div class="demo-grid">
+    <div class="demo-copy">
+      <span class="eyebrow" data-i18n="demo_eyebrow">Sehen Sie selbst</span>
+      <h2 data-i18n="demo_h2">So klingt ein Assistent, der Ihre Region kennt.</h2>
+      <p data-i18n="demo_p">Keine Marketing-Folien — so läuft eine echte Qualifizierung mit LagoEstate ab. Der Assistent versteht die Anfrage, fragt gezielt nach und übergibt nur ernsthafte Interessenten an Ihr Team.</p>
+      <a class="btn btn-dark" href="mailto:info@lagonord.de?subject=Live-Demo" data-i18n="demo_cta">Live-Demo anfragen</a>
+    </div>
+    <div class="browser reveal">
+      <div class="b-bar">
+        <span class="tl"></span><span class="tl y"></span><span class="tl g"></span>
+        <div class="b-url">immobiliare-benacus.it</div>
+      </div>
+      <div class="b-page">
+        <div class="b-nav">
+          <div class="b-logo">Immobiliare <b>Benacus</b></div>
+          <div class="b-links"><span></span><span></span><span></span></div>
+        </div>
+        <div class="b-cards">
+          <div class="b-card"><div class="b-img"></div><div class="b-l1"></div><div class="b-l2"></div></div>
+          <div class="b-card"><div class="b-img i2"></div><div class="b-l1"></div><div class="b-l2"></div></div>
+          <div class="b-card"><div class="b-img i3"></div><div class="b-l1"></div><div class="b-l2"></div></div>
+        </div>
+        <!-- eingebettetes Widget -->
+        <div class="widget">
+          <div class="w-head">
+            <div class="w-av">A</div>
+            <div><div class="w-n">Alessandro</div><div class="w-k" data-i18n="w_role">LagoEstate · KI-Berater</div></div>
+            <span class="w-dot"></span>
+          </div>
+          <div class="w-body cplay" data-chatplay="widget">
+            <div class="msg guest" data-i18n="chat_1">Guten Tag, wir suchen eine Wohnung am Gardasee, gerne mit Seeblick. Was haben Sie im Angebot?</div>
+            <div class="msg ai" data-i18n="chat_2">Gerne! Damit ich Ihnen die passenden Objekte zeige: Denken Sie an einen <b>Zweitwohnsitz</b> oder eine <b>Kapitalanlage</b> mit Vermietung? Und in welchem Budgetrahmen bewegen wir uns ungefähr?</div>
+            <div class="msg guest" data-i18n="chat_3">Zweitwohnsitz, bis etwa 450.000 €. Wichtig wäre eine Terrasse.</div>
+            <div class="msg ai" data-i18n="chat_4">Perfekt. Bei diesem Budget mit Terrasse und Seenähe lohnt sich der Blick nach <b>Padenghe und Moniga</b> — dort ist das Preis-Leistungs-Verhältnis aktuell deutlich besser als in Sirmione. Ich habe 3 passende Objekte notiert und leite Ihre Anfrage an unser Team weiter. Wann erreichen wir Sie am besten?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pipeline hinter dem Widget -->
+  <div class="pipe reveal">
+    <div class="pipe-title" data-i18n="pipe_title">Und im Hintergrund, vollautomatisch:</div>
+    <div class="pipe-steps">
+      <div class="pipe-step"><div class="pn">1</div><div><b data-i18n="pipe1_h">Lead-Rating</b><span data-i18n="pipe1_p">KI bewertet Budget, Ernsthaftigkeit &amp; Zeitrahmen</span></div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="pn">2</div><div><b data-i18n="pipe2_h">CRM-Eintrag</b><span data-i18n="pipe2_p">Kontakt &amp; Deal automatisch angelegt</span></div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="pn">3</div><div><b data-i18n="pipe3_h">WhatsApp-Follow-up</b><span data-i18n="pipe3_p">Gespräch geht auf WhatsApp weiter — mit Exposé</span></div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="pn">4</div><div><b data-i18n="pipe4_h">Makler-Alert</b><span data-i18n="pipe4_p">Nur qualifizierte Leads landen bei Ihnen</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LagoStay Showcase -->
+<section id="lagostay" class="stay wrap">
+  <div class="stay-grid">
+    <div class="stay-copy">
+      <span class="eyebrow" data-i18n="st_eyebrow">LagoStay im Detail</span>
+      <h2 data-i18n="st_h2">Ihr Haus. Ihre Marke. Unser Concierge.</h2>
+      <p data-i18n="st_p1">Gast scannt den QR-Code im Zimmer — kein Download, keine App. Der Concierge beantwortet Hausfragen in <b>Ihrer Stimme und Ihren Farben</b>, rund um die Uhr, in der Sprache des Gastes. Und was er nicht sicher weiß, rät er nicht — er übergibt an Ihre Rezeption.</p>
+      <p data-i18n="st_p2">Sie gewinnen doppelt: weniger Anrufe an der Rezeption, glücklichere Gäste — und ein digitaler Service, der aussieht, als hätten Sie ihn selbst gebaut.</p>
+      <div class="wl-trio">
+        <div class="wl"><span data-i18n="st_chip1">QR im Zimmer · kein Download</span></div>
+        <div class="wl"><span data-i18n="st_chip2">Ihre Farben, Ihr Logo, Ihre Hausregeln</span></div>
+        <div class="wl"><span data-i18n="st_chip3">Übergibt an die Rezeption, wenn es drauf ankommt</span></div>
+      </div>
+      <a class="btn btn-dark" href="mailto:info@lagonord.de?subject=LagoStay%20Pilot" data-i18n="st_cta">Pilot-Hotel werden</a>
+    </div>
+    <div class="phone reveal">
+      <div class="scr">
+        <div class="pill"><i></i><span>stay.lagonord.de/bellevue</span></div>
+        <div class="ph-head">
+          <div class="g">B</div>
+          <div><div class="n">Hotel Bellevue</div><div class="k">Hotel · Bardolino</div></div>
+          <div class="lv"><i></i>live</div>
+        </div>
+        <div class="ph-chat cplay" data-chatplay="phone">
+          <div class="pm g" data-i18n="st_m1">Wann ist der Pool geöffnet?</div>
+          <div class="pm c" data-i18n="st_m2">Der Pool ist täglich von <b>8 bis 20 Uhr</b> geöffnet. Handtücher gibt's am Eingang.</div>
+          <div class="pm g" data-i18n="st_m3">Sind Hunde auf der Terrasse erlaubt?</div>
+          <div class="pm c" data-i18n="st_m4">Auf der Terrasse sehr gerne — im Innenraum bitten wir, darauf zu verzichten. Ein Wassernapf wartet an der Bar.</div>
+          <div class="pm g" data-i18n="st_m5">Gibt es heute Abend einen Babysitter?</div>
+          <div class="pm c" data-i18n="st_m6">Das weiß ich nicht sicher — und ich rate nicht. Unsere Rezeption kümmert sich sofort darum:</div>
+          <div class="rec-card">
+            <div class="rc-ic">✆</div>
+            <div><div class="rc-t" data-i18n="st_rec_t">Rezeption anrufen</div><div class="rc-s">+39 045 … · 24 h</div></div>
+          </div>
+        </div>
+        <div class="ph-foot">
+          <div class="ph-input"><div class="f" data-i18n="st_input">Schreiben Sie dem Concierge…</div><div class="s">➤</div></div>
+          <div class="ph-pow">powered by<em>LagoNord AI</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ablauf" class="dfy">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="dfy_eyebrow">„Done-for-you"</span>
+      <h2 data-i18n="dfy_h2">Sie brauchen kein IT-Team. Wir richten alles ein.</h2>
+      <p class="sec-sub" data-i18n="dfy_sub">Von der ersten Frage bis zum laufenden Assistenten — in drei Schritten, mit Ansprechpartnern vor Ort.</p>
+    </div>
+    <div class="dfy-grid">
+      <div class="dfy-step reveal"><div class="n">1</div><h3 data-i18n="dfy1_h">Kennenlernen</h3><p data-i18n="dfy1_p">Wir schauen uns Ihren Betrieb an: Welche Anfragen kommen rein, was kostet Sie Zeit, wo geht Umsatz verloren. Erstgespräch kostenlos, auf Deutsch oder Italienisch.</p></div>
+      <div class="dfy-step reveal"><div class="n">2</div><h3 data-i18n="dfy2_h">Einrichten</h3><p data-i18n="dfy2_p">Wir bauen Ihren Assistenten mit Ihrem Wissen: Ihre Objekte, Ihre Zimmer, Ihre Empfehlungen. Sie liefern Inhalte — wir kümmern uns um die komplette Technik.</p></div>
+      <div class="dfy-step reveal"><div class="n">3</div><h3 data-i18n="dfy3_h">Laufen lassen</h3><p data-i18n="dfy3_p">Ihr Assistent arbeitet ab Tag eins. Wir überwachen die Qualität, Sie sehen jede Konversation. Anpassungen? Ein Anruf genügt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prinzipien" class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow" data-i18n="pr_eyebrow">Warum LagoNord</span>
+    <h2 data-i18n="pr_h2">KI recherchiert. Mensch verantwortet.</h2>
+  </div>
+  <div class="pr-grid">
+    <div class="pr reveal"><div class="bar"></div><h3 data-i18n="pr1_h">Keine Halluzinationen</h3><p data-i18n="pr1_p">Unsere Assistenten antworten nur aus Ihrem geprüften Wissen. Was nicht hinterlegt ist, wird nicht erfunden — im Zweifel wird an Sie übergeben.</p></div>
+    <div class="pr reveal"><div class="bar"></div><h3 data-i18n="pr2_h">Industrieller Anspruch</h3><p data-i18n="pr2_p">15+ Jahre internationale IT- und Management-Beratung stecken in jedem Projekt. Skalierbar, DSGVO-konform, auf europäischen Servern.</p></div>
+    <div class="pr reveal"><div class="bar"></div><h3 data-i18n="pr3_h">Vor Ort, nicht remote</h3><p data-i18n="pr3_p">Wir leben in Peschiera del Garda. Ihre Region ist unsere Region — und Ihr Assistent kennt sie so gut wie wir.</p></div>
+  </div>
+</section>
+
+<section id="team" class="wrap" style="padding-top:0">
+  <div class="sec-head">
+    <span class="eyebrow" data-i18n="team_eyebrow">Wer dahinter steht</span>
+    <h2 data-i18n="team_h2">Zwei Gründer. Ein Hund. Ein See.</h2>
+  </div>
+  <div class="team-strip reveal">
+    <div class="tm"><img class="av-img" src="assets/cristina.jpg" alt="Cristina" onerror="this.outerHTML='<div class=&quot;av&quot;>C</div>'"><div><div class="nm">Cristina</div><div class="rl">Founder · Creative Strategy</div></div></div>
+    <div class="tm"><img class="av-img" src="assets/tim.jpg" alt="Tim" onerror="this.outerHTML='<div class=&quot;av&quot;>T</div>'"><div><div class="nm">Tim</div><div class="rl">Founder · AI &amp; Automation</div></div></div>
+    <div class="tm"><img class="av-img" src="assets/luna.jpg" alt="Luna" onerror="this.outerHTML='<div class=&quot;av&quot;>L</div>'"><div><div class="nm">Luna</div><div class="rl">Chief Happiness Officer</div></div></div>
+  </div>
+  <p class="team-note" data-i18n="team_note" data-i18n-html="1">Beide Gründer kommen aus der internationalen Management- und IT-Beratung und leben heute am Gardasee. LagoNord AI ist ein Unternehmen von <a href="https://www.thehouseofprompts.com" rel="noopener">The House of Prompts</a> — mehr über uns auf der <a href="https://www.thehouseofprompts.com/team-and-vision/" rel="noopener">Team-Seite</a>.</p>
+</section>
+
+<section id="faq" class="wrap" style="padding-top:0">
+  <div class="sec-head">
+    <span class="eyebrow" data-i18n="faq_eyebrow">Häufige Fragen</span>
+    <h2 data-i18n="faq_h2">Was Betriebe uns fragen.</h2>
+  </div>
+  <div class="faq reveal">
+    <details><summary data-i18n="faq1_q">Was passiert, wenn der Assistent etwas nicht weiß?</summary><p data-i18n="faq1_a">Dann sagt er es — und übergibt an Sie. Unsere Assistenten antworten ausschließlich aus Ihrem hinterlegten Wissen. Erfundene Antworten („Halluzinationen") verhindern wir technisch: Was nicht geprüft hinterlegt ist, wird nicht behauptet.</p></details>
+    <details><summary data-i18n="faq2_q">Ist das DSGVO-konform?</summary><p data-i18n="faq2_a">Ja. Hosting auf europäischen Servern, keine Weitergabe Ihrer Daten an Dritte, Auftragsverarbeitungsvertrag inklusive. Auf Wunsch zeigen wir Ihnen die komplette Datenarchitektur — wir kommen aus der IT-Beratung, das ist unser Handwerk.</p></details>
+    <details><summary data-i18n="faq3_q">Wie viel Aufwand habe ich bei der Einrichtung?</summary><p data-i18n="faq3_a">Etwa 2–3 Stunden Ihrer Zeit: ein Kennenlern-Gespräch und das Bereitstellen Ihrer Inhalte. Den Rest — Technik, Training, Tests — übernehmen wir. Das ist unser „Done-for-you"-Versprechen.</p></details>
+    <details><summary data-i18n="faq4_q">Sehe ich, was der Assistent antwortet?</summary><p data-i18n="faq4_a">Jede Konversation ist für Sie einsehbar. Sie behalten die Kontrolle: Antworten, die Ihnen nicht gefallen, korrigieren wir im Wissen des Assistenten — meist innerhalb eines Tages.</p></details>
+    <details><summary data-i18n="faq5_q">In welchen Sprachen funktioniert das?</summary><p data-i18n="faq5_a">Standardmäßig Deutsch, Italienisch und Englisch — die Sprachen Ihrer Gäste und Kunden am Gardasee. Weitere Sprachen (z.B. Niederländisch) sind möglich.</p></details>
+    <details><summary data-i18n="faq6_q">Was kostet ein Assistent?</summary><p data-i18n="faq6_a">Das hängt vom Umfang ab. Im kostenlosen Erstgespräch bekommen Sie eine konkrete Einschätzung, ohne Verpflichtung.</p></details>
+  </div>
+</section>
+
+<section id="kontakt" class="wrap">
+  <div class="contact reveal">
+    <span class="eyebrow" data-i18n="contact_eyebrow">Kontakt</span>
+    <h2 data-i18n="contact_h2">Reden wir über Ihren Betrieb.</h2>
+    <p data-i18n="contact_p">Ob Agentur, Hotel oder Betrieb am See — erzählen Sie uns, welche Anfragen Sie Zeit kosten. Erste Einschätzung kostenlos, unverbindlich, auf Deutsch oder Italienisch.</p>
+    <a class="btn btn-dark" href="mailto:info@lagonord.de?subject=Anfrage%20LagoNord%20AI" data-i18n="contact_cta">Jetzt informieren</a>
+    <div class="mail" data-i18n="contact_mail" data-i18n-html="1">oder direkt: <a href="mailto:info@lagonord.de">info@lagonord.de</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div data-i18n="foot_left" data-i18n-html="1"><b>LagoNord AI</b> · Peschiera del Garda · Ein Unternehmen von <a href="https://www.thehouseofprompts.com" rel="noopener">The House of Prompts</a> · © 2026</div>
+    <div style="display:flex;gap:20px">
+      <a href="https://www.gardaunica.com" rel="noopener">Garda Unica</a>
+      <a href="mailto:info@lagonord.de" data-i18n="foot_contact">Kontakt</a>
+      <a href="imprint.html" data-i18n="foot_imprint">Impressum</a>
+      <a href="privacy.html" data-i18n="foot_privacy">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const I18N={
+  de:{
+    w_role:"LagoEstate · KI-Berater",
+    pipe_title:"Und im Hintergrund, vollautomatisch:",
+    pipe1_h:"Lead-Rating",pipe1_p:"KI bewertet Budget, Ernsthaftigkeit &amp; Zeitrahmen",
+    pipe2_h:"CRM-Eintrag",pipe2_p:"Kontakt &amp; Deal automatisch angelegt",
+    pipe3_h:"WhatsApp-Follow-up",pipe3_p:"Gespräch geht auf WhatsApp weiter — mit Exposé",
+    pipe4_h:"Makler-Alert",pipe4_p:"Nur qualifizierte Leads landen bei Ihnen",
+    st_eyebrow:"LagoStay im Detail",st_h2:"Ihr Haus. Ihre Marke. Unser Concierge.",
+    st_p1:"Gast scannt den QR-Code im Zimmer — kein Download, keine App. Der Concierge beantwortet Hausfragen in <b>Ihrer Stimme und Ihren Farben</b>, rund um die Uhr, in der Sprache des Gastes. Und was er nicht sicher weiß, rät er nicht — er übergibt an Ihre Rezeption.",
+    st_p2:"Sie gewinnen doppelt: weniger Anrufe an der Rezeption, glücklichere Gäste — und ein digitaler Service, der aussieht, als hätten Sie ihn selbst gebaut.",
+    st_wl:"Drei Marken. Ein Unterbau. Ihre Farben, Ihr Logo, Ihre Hausregeln — in einem Nachmittag eingerichtet.",
+    st_cta:"Pilot-Hotel werden",
+    st_m1:"Wann ist der Pool geöffnet?",st_m2:"Der Pool ist täglich von <b>8 bis 20 Uhr</b> geöffnet. Handtücher gibt's am Eingang.",
+    st_m3:"Sind Hunde auf der Terrasse erlaubt?",st_m4:"Auf der Terrasse sehr gerne — im Innenraum bitten wir, darauf zu verzichten. Ein Wassernapf wartet an der Bar.",st_m5:"Gibt es heute Abend einen Babysitter?",st_m6:"Das weiß ich nicht sicher — und ich rate nicht. Unsere Rezeption kümmert sich sofort darum:",st_rec_t:"Rezeption anrufen",st_chip1:"QR im Zimmer · kein Download",st_chip2:"Ihre Farben, Ihr Logo, Ihre Hausregeln",st_chip3:"Übergibt an die Rezeption, wenn es drauf ankommt",
+    st_hq:"„Du bist in <em>Bardolino</em>. Ich kenne den Süden Ort für Ort — und ich weiß, wo es morgen mit kleinen Kindern ruhig ist.\"",
+    st_hcta:"Mit Unica planen →",st_funnel:"✦ Funnel erreicht · Gast geht zu Unica",st_input:"Schreiben Sie dem Concierge…",
+    nav_products:"Assistenten",nav_how:"So läuft's",nav_faq:"FAQ",nav_team:"Team",nav_cta:"Jetzt informieren",
+    hero_h1:"LagoNord AI ist Ihr KI‑Partner am Gardasee.",
+    hero_lede:"Fertige KI-Assistenten für Immobilien, Tourismus &amp; Hotellerie — „Done-for-you\" eingerichtet.",
+    hero_sub:"Sie führen Ihren Betrieb. Wir bauen den Assistenten, der Ihre Anfragen beantwortet, qualifiziert und vorsortiert — auf Deutsch, Italienisch und Englisch.",
+    hero_cta1:"Jetzt informieren",hero_cta2:"Assistenten ansehen",
+    asst_eyebrow:"Unsere Assistenten",asst_h2:"Jede Branche hat andere Anfragen — wählen Sie den passenden Assistenten für Ihren Betrieb.",
+    estate_for:"Für Immobilien-Agenturen &amp; Bauträger",estate_p:"Qualifiziert Ihre Immobilien-Anfragen 24/7 auf Deutsch, Italienisch und Englisch. Budget, Zeitrahmen, Ernsthaftigkeit — vorsortiert, bevor Ihr Makler den Hörer abnimmt.",estate_cta:"Mehr erfahren",
+    stay_for:"Für Hotels &amp; Gastgeber",stay_p:"Der digitale Concierge im Hotelzimmer. QR-Code scannen, Fragen stellen, hauseigene Empfehlungen erhalten — in der Sprache Ihres Gastes, rund um die Uhr. Nutzt dieselbe Engine wie unsere App Garda Unica und führt Ihre Gäste direkt zu den besten Orten am See.",stay_cta:"Pilot anfragen",
+    unica_for:"Für Gäste am Südufer",unica_p:"Unser eigenes Consumer-Produkt: der KI-Reisebegleiter für den südlichen Gardasee. Eine Empfehlung pro Moment, ehrliche Crowd-Daten, lokales Wissen. Start: Sommer 2026.",unica_cta:"Zur App-Seite",
+    soon_badge:"In Kürze",social_for:"Für Hotels &amp; Gastgeber",social_p:"Ein Agent, der aus Ihrem Haus automatisch Social-Media-Content erstellt: Sonnenuntergangs-Posts, lokale Event-Tipps, saisonale Angebote — mit dem Gardasee-Wissen, das nur wir haben. Sie geben frei, der Agent liefert die Entwürfe.",social_cta:"Interesse anmelden",
+    demo_eyebrow:"Sehen Sie selbst",demo_h2:"So klingt ein Assistent, der Ihre Region kennt.",demo_p:"Keine Marketing-Folien — so läuft eine echte Qualifizierung mit LagoEstate ab. Der Assistent versteht die Anfrage, fragt gezielt nach und übergibt nur ernsthafte Interessenten an Ihr Team.",demo_cta:"Live-Demo anfragen",
+    chat_who:"Beispiel · LagoEstate",chat_1:"Guten Tag, wir suchen eine Wohnung am Gardasee, gerne mit Seeblick. Was haben Sie im Angebot?",chat_2:"Gerne! Damit ich Ihnen die passenden Objekte zeige: Denken Sie an einen <b>Zweitwohnsitz</b> oder eine <b>Kapitalanlage</b> mit Vermietung? Und in welchem Budgetrahmen bewegen wir uns ungefähr?",chat_3:"Zweitwohnsitz, bis etwa 450.000 €. Wichtig wäre eine Terrasse.",chat_4:"Perfekt. Bei diesem Budget mit Terrasse und Seenähe lohnt sich der Blick nach <b>Padenghe und Moniga</b> — dort ist das Preis-Leistungs-Verhältnis aktuell deutlich besser als in Sirmione. Ich habe 3 passende Objekte notiert und leite Ihre Anfrage an unser Team weiter. Wann erreichen wir Sie am besten?",chat_note:"Gekürztes Beispielgespräch · Der Assistent antwortet auf DE, IT und EN",
+    dfy_eyebrow:"„Done-for-you\"",dfy_h2:"Sie brauchen kein IT-Team. Wir richten alles ein.",dfy_sub:"Von der ersten Frage bis zum laufenden Assistenten — in drei Schritten, mit Ansprechpartnern vor Ort.",
+    dfy1_h:"Kennenlernen",dfy1_p:"Wir schauen uns Ihren Betrieb an: Welche Anfragen kommen rein, was kostet Sie Zeit, wo geht Umsatz verloren. Erstgespräch kostenlos, auf Deutsch oder Italienisch.",
+    dfy2_h:"Einrichten",dfy2_p:"Wir bauen Ihren Assistenten mit Ihrem Wissen: Ihre Objekte, Ihre Zimmer, Ihre Empfehlungen. Sie liefern Inhalte — wir kümmern uns um die komplette Technik.",
+    dfy3_h:"Laufen lassen",dfy3_p:"Ihr Assistent arbeitet ab Tag eins. Wir überwachen die Qualität, Sie sehen jede Konversation. Anpassungen? Ein Anruf genügt.",
+    pr_eyebrow:"Warum LagoNord",pr_h2:"KI recherchiert. Mensch verantwortet.",
+    pr1_h:"Keine Halluzinationen",pr1_p:"Unsere Assistenten antworten nur aus Ihrem geprüften Wissen. Was nicht hinterlegt ist, wird nicht erfunden — im Zweifel wird an Sie übergeben.",
+    pr2_h:"Industrieller Anspruch",pr2_p:"15+ Jahre internationale IT- und Management-Beratung stecken in jedem Projekt. Skalierbar, DSGVO-konform, auf europäischen Servern.",
+    pr3_h:"Vor Ort, nicht remote",pr3_p:"Wir leben in Peschiera del Garda. Ihre Region ist unsere Region — und Ihr Assistent kennt sie so gut wie wir.",
+    team_eyebrow:"Wer dahinter steht",team_h2:"Zwei Gründer. Ein Hund. Ein See.",team_note:"Beide Gründer kommen aus der internationalen Management- und IT-Beratung und leben heute am Gardasee. LagoNord AI ist ein Unternehmen von <a href=\"https://www.thehouseofprompts.com\" rel=\"noopener\">The House of Prompts</a> — mehr über uns auf der <a href=\"https://www.thehouseofprompts.com/team-and-vision/\" rel=\"noopener\">Team-Seite</a>.",
+    faq_eyebrow:"Häufige Fragen",faq_h2:"Was Betriebe uns fragen.",
+    faq1_q:"Was passiert, wenn der Assistent etwas nicht weiß?",faq1_a:"Dann sagt er es — und übergibt an Sie. Unsere Assistenten antworten ausschließlich aus Ihrem hinterlegten Wissen. Erfundene Antworten („Halluzinationen\") verhindern wir technisch: Was nicht geprüft hinterlegt ist, wird nicht behauptet.",
+    faq2_q:"Ist das DSGVO-konform?",faq2_a:"Ja. Hosting auf europäischen Servern, keine Weitergabe Ihrer Daten an Dritte, Auftragsverarbeitungsvertrag inklusive. Auf Wunsch zeigen wir Ihnen die komplette Datenarchitektur — wir kommen aus der IT-Beratung, das ist unser Handwerk.",
+    faq3_q:"Wie viel Aufwand habe ich bei der Einrichtung?",faq3_a:"Etwa 2–3 Stunden Ihrer Zeit: ein Kennenlern-Gespräch und das Bereitstellen Ihrer Inhalte. Den Rest — Technik, Training, Tests — übernehmen wir. Das ist unser „Done-for-you\"-Versprechen.",
+    faq4_q:"Sehe ich, was der Assistent antwortet?",faq4_a:"Jede Konversation ist für Sie einsehbar. Sie behalten die Kontrolle: Antworten, die Ihnen nicht gefallen, korrigieren wir im Wissen des Assistenten — meist innerhalb eines Tages.",
+    faq5_q:"In welchen Sprachen funktioniert das?",faq5_a:"Standardmäßig Deutsch, Italienisch und Englisch — die Sprachen Ihrer Gäste und Kunden am Gardasee. Weitere Sprachen (z.B. Niederländisch) sind möglich.",
+    faq6_q:"Was kostet ein Assistent?",faq6_a:"Das hängt vom Umfang ab. Im kostenlosen Erstgespräch bekommen Sie eine konkrete Einschätzung, ohne Verpflichtung.",
+    contact_eyebrow:"Kontakt",contact_h2:"Reden wir über Ihren Betrieb.",contact_p:"Ob Agentur, Hotel oder Betrieb am See — erzählen Sie uns, welche Anfragen Sie Zeit kosten. Erste Einschätzung kostenlos, unverbindlich, auf Deutsch oder Italienisch.",contact_cta:"Jetzt informieren",contact_mail:"oder direkt: <a href=\"mailto:info@lagonord.de\">info@lagonord.de</a>",
+    foot_left:"<b>LagoNord AI</b> · Peschiera del Garda · Ein Unternehmen von <a href=\"https://www.thehouseofprompts.com\" rel=\"noopener\">The House of Prompts</a> · © 2026",foot_contact:"Kontakt",foot_imprint:"Impressum",foot_privacy:"Datenschutz"
+  },
+  it:{
+    w_role:"LagoEstate · Consulente AI",
+    pipe_title:"E dietro le quinte, in automatico:",
+    pipe1_h:"Lead-Rating",pipe1_p:"L'AI valuta budget, serietà e tempistiche",
+    pipe2_h:"Inserimento CRM",pipe2_p:"Contatto e trattativa creati in automatico",
+    pipe3_h:"Follow-up WhatsApp",pipe3_p:"La conversazione continua su WhatsApp — con brochure",
+    pipe4_h:"Alert all'agente",pipe4_p:"Solo i lead qualificati arrivano a te",
+    st_eyebrow:"LagoStay nel dettaglio",st_h2:"La tua struttura. Il tuo brand. Il nostro concierge.",
+    st_p1:"L'ospite scansiona il QR in camera — nessun download, nessuna app. Il concierge risponde alle domande sulla struttura con <b>la tua voce e i tuoi colori</b>, 24 ore su 24, nella lingua dell'ospite. E ciò che non sa con certezza non lo inventa — passa alla tua reception.",
+    st_p2:"Vinci due volte: meno telefonate alla reception, ospiti più contenti — e un servizio digitale che sembra costruito da te.",
+    st_wl:"Tre brand. Una base. I tuoi colori, il tuo logo, le tue regole — configurato in un pomeriggio.",
+    st_cta:"Diventa hotel pilota",
+    st_m1:"A che ora apre la piscina?",st_m2:"La piscina è aperta tutti i giorni dalle <b>8 alle 20</b>. Gli asciugamani sono all'ingresso.",
+    st_m3:"I cani sono ammessi in terrazza?",st_m4:"In terrazza molto volentieri — all'interno preferiamo di no. Una ciotola d'acqua vi aspetta al bar.",st_m5:"C'è un babysitter per stasera?",st_m6:"Non lo so con certezza — e non tiro a indovinare. La nostra reception se ne occupa subito:",st_rec_t:"Chiama la reception",st_chip1:"QR in camera · nessun download",st_chip2:"I tuoi colori, il tuo logo, le tue regole",st_chip3:"Passa alla reception quando conta davvero",
+    st_hq:"„Sei a <em>Bardolino</em>. Conosco il basso Garda paese per paese — e so dove domani è tranquillo con i bambini piccoli.\"",
+    st_hcta:"Pianifica con Unica →",st_funnel:"✦ Funnel raggiunto · L'ospite passa a Unica",st_input:"Scrivi al concierge…",
+    nav_products:"Assistenti",nav_how:"Come funziona",nav_faq:"FAQ",nav_team:"Team",nav_cta:"Contattaci",
+    hero_h1:"LagoNord AI è il tuo partner AI sul Lago di Garda.",
+    hero_lede:"Assistenti AI pronti all'uso per immobiliare, turismo e ospitalità — configurati „chiavi in mano\".",
+    hero_sub:"Tu gestisci la tua attività. Noi costruiamo l'assistente che risponde, qualifica e smista le tue richieste — in italiano, tedesco e inglese.",
+    hero_cta1:"Contattaci",hero_cta2:"Vedi gli assistenti",
+    asst_eyebrow:"I nostri assistenti",asst_h2:"Ogni settore ha richieste diverse — scegli l'assistente giusto per la tua attività.",
+    estate_for:"Per agenzie immobiliari e costruttori",estate_p:"Qualifica le tue richieste immobiliari 24/7 in italiano, tedesco e inglese. Budget, tempi, serietà — già filtrati prima che il tuo agente alzi la cornetta.",estate_cta:"Scopri di più",
+    stay_for:"Per hotel e strutture ricettive",stay_p:"Il concierge digitale in camera. Il cliente scansiona il QR, fa domande e riceve i tuoi consigli personalizzati — nella sua lingua, 24 ore su 24. Usa lo stesso motore della nostra app Garda Unica e guida i tuoi ospiti verso i posti migliori del lago.",stay_cta:"Richiedi un pilota",
+    unica_for:"Per gli ospiti della sponda sud",unica_p:"Il nostro prodotto consumer: la guida di viaggio AI per il basso Lago di Garda. Un consiglio per ogni momento, dati reali sull'affluenza, conoscenza locale. Lancio: estate 2026.",unica_cta:"Vai al sito dell'app",
+    soon_badge:"In arrivo",social_for:"Per hotel e strutture ricettive",social_p:"Un agente che crea automaticamente contenuti social dalla tua struttura: post al tramonto, eventi locali, offerte stagionali — con la conoscenza del Garda che solo noi abbiamo. Tu approvi, l'agente prepara le bozze.",social_cta:"Segnala interesse",
+    demo_eyebrow:"Guarda tu stesso",demo_h2:"Ecco come parla un assistente che conosce la tua zona.",demo_p:"Niente slide di marketing — ecco una vera qualificazione con LagoEstate. L'assistente capisce la richiesta, fa le domande giuste e passa al tuo team solo i contatti seri.",demo_cta:"Richiedi una demo dal vivo",
+    chat_who:"Esempio · LagoEstate",chat_1:"Buongiorno, cerchiamo un appartamento sul Lago di Garda, possibilmente con vista lago. Cosa avete disponibile?",chat_2:"Con piacere! Per mostrarle le proposte giuste: pensa a una <b>seconda casa</b> o a un <b>investimento</b> con affitto? E in quale fascia di budget ci muoviamo all'incirca?",chat_3:"Seconda casa, fino a circa 450.000 €. Importante avere una terrazza.",chat_4:"Perfetto. Con questo budget, terrazza e vicinanza al lago vale la pena guardare a <b>Padenghe e Moniga</b> — lì il rapporto qualità-prezzo è oggi nettamente migliore che a Sirmione. Ho annotato 3 immobili adatti e inoltro la sua richiesta al nostro team. Quando possiamo contattarla?",chat_note:"Conversazione di esempio ridotta · L'assistente risponde in IT, DE e EN",
+    dfy_eyebrow:"„Chiavi in mano\"",dfy_h2:"Non serve un reparto IT. Configuriamo tutto noi.",dfy_sub:"Dalla prima domanda all'assistente attivo — in tre passi, con referenti sul posto.",
+    dfy1_h:"Conosciamoci",dfy1_p:"Analizziamo la tua attività: quali richieste arrivano, cosa ti fa perdere tempo, dove perdi fatturato. Primo colloquio gratuito, in italiano o tedesco.",
+    dfy2_h:"Configuriamo",dfy2_p:"Costruiamo il tuo assistente con la tua conoscenza: i tuoi immobili, le tue camere, i tuoi consigli. Tu fornisci i contenuti — noi pensiamo a tutta la tecnica.",
+    dfy3_h:"Mettiamo in moto",dfy3_p:"Il tuo assistente lavora dal primo giorno. Noi monitoriamo la qualità, tu vedi ogni conversazione. Modifiche? Basta una telefonata.",
+    pr_eyebrow:"Perché LagoNord",pr_h2:"L'AI ricerca. L'uomo risponde.",
+    pr1_h:"Niente allucinazioni",pr1_p:"I nostri assistenti rispondono solo dalla tua conoscenza verificata. Ciò che non è documentato non viene inventato — nel dubbio, passano a te.",
+    pr2_h:"Standard industriale",pr2_p:"Oltre 15 anni di consulenza IT e manageriale internazionale in ogni progetto. Scalabile, conforme al GDPR, su server europei.",
+    pr3_h:"Sul posto, non da remoto",pr3_p:"Viviamo a Peschiera del Garda. La tua regione è la nostra regione — e il tuo assistente la conosce bene quanto noi.",
+    team_eyebrow:"Chi c'è dietro",team_h2:"Due founder. Un cane. Un lago.",team_note:"Entrambi i founder vengono dalla consulenza manageriale e IT internazionale e oggi vivono sul Lago di Garda. LagoNord AI è un'azienda di <a href=\"https://www.thehouseofprompts.com\" rel=\"noopener\">The House of Prompts</a> — scopri di più sulla <a href=\"https://www.thehouseofprompts.com/team-and-vision/\" rel=\"noopener\">pagina del team</a>.",
+    faq_eyebrow:"Domande frequenti",faq_h2:"Cosa ci chiedono le attività.",
+    faq1_q:"Cosa succede se l'assistente non sa qualcosa?",faq1_a:"Lo dice — e passa a te. I nostri assistenti rispondono esclusivamente dalla conoscenza che hai fornito. Le risposte inventate („allucinazioni\") le impediamo tecnicamente: ciò che non è verificato non viene affermato.",
+    faq2_q:"È conforme al GDPR?",faq2_a:"Sì. Hosting su server europei, nessuna cessione dei tuoi dati a terzi, contratto di trattamento dati incluso. Su richiesta ti mostriamo l'intera architettura dei dati — veniamo dalla consulenza IT, è il nostro mestiere.",
+    faq3_q:"Quanto impegno richiede la configurazione?",faq3_a:"Circa 2–3 ore del tuo tempo: un colloquio conoscitivo e la fornitura dei tuoi contenuti. Il resto — tecnica, training, test — lo facciamo noi. È la nostra promessa „chiavi in mano\".",
+    faq4_q:"Vedo cosa risponde l'assistente?",faq4_a:"Ogni conversazione è consultabile. Mantieni il controllo: le risposte che non ti piacciono le correggiamo nella conoscenza dell'assistente — di solito entro un giorno.",
+    faq5_q:"In quali lingue funziona?",faq5_a:"Di base italiano, tedesco e inglese — le lingue dei tuoi ospiti e clienti sul Garda. Altre lingue (es. olandese) sono possibili.",
+    faq6_q:"Quanto costa un assistente?",faq6_a:"Dipende dall'ambito. Nel primo colloquio gratuito ricevi una stima concreta, senza impegno.",
+    contact_eyebrow:"Contatti",contact_h2:"Parliamo della tua attività.",contact_p:"Agenzia, hotel o attività sul lago — raccontaci quali richieste ti fanno perdere tempo. Prima valutazione gratuita e senza impegno, in italiano o tedesco.",contact_cta:"Contattaci",contact_mail:"oppure direttamente: <a href=\"mailto:info@lagonord.de\">info@lagonord.de</a>",
+    foot_left:"<b>LagoNord AI</b> · Peschiera del Garda · Un'azienda di <a href=\"https://www.thehouseofprompts.com\" rel=\"noopener\">The House of Prompts</a> · © 2026",foot_contact:"Contatti",foot_imprint:"Note legali",foot_privacy:"Privacy"
+  },
+  en:{
+    w_role:"LagoEstate · AI advisor",
+    pipe_title:"And behind the scenes, fully automatic:",
+    pipe1_h:"Lead rating",pipe1_p:"AI assesses budget, seriousness &amp; timeline",
+    pipe2_h:"CRM entry",pipe2_p:"Contact &amp; deal created automatically",
+    pipe3_h:"WhatsApp follow-up",pipe3_p:"The conversation continues on WhatsApp — with brochure",
+    pipe4_h:"Broker alert",pipe4_p:"Only qualified leads reach you",
+    st_eyebrow:"LagoStay in detail",st_h2:"Your house. Your brand. Our concierge.",
+    st_p1:"Guests scan the QR code in the room — no download, no app. The concierge answers house questions in <b>your voice and your colours</b>, around the clock, in your guest's language. And what it doesn't know for sure, it doesn't guess — it hands over to your reception.",
+    st_p2:"You win twice: fewer calls to reception, happier guests — and a digital service that looks like you built it yourself.",
+    st_wl:"Three brands. One foundation. Your colours, your logo, your house rules — set up in an afternoon.",
+    st_cta:"Become a pilot hotel",
+    st_m1:"When is the pool open?",st_m2:"The pool is open daily from <b>8am to 8pm</b>. Towels are at the entrance.",
+    st_m3:"Are dogs allowed on the terrace?",st_m4:"On the terrace very gladly — indoors we kindly ask you not to. A water bowl is waiting at the bar.",st_m5:"Is there a babysitter tonight?",st_m6:"I don't know for sure — and I don't guess. Our reception will take care of it right away:",st_rec_t:"Call reception",st_chip1:"QR in the room · no download",st_chip2:"Your colours, your logo, your house rules",st_chip3:"Hands over to reception when it matters",
+    st_hq:"„You're in <em>Bardolino</em>. I know the south shore town by town — and I know where it's quiet with small children tomorrow.\"",
+    st_hcta:"Plan with Unica →",st_funnel:"✦ Funnel reached · Guest moves to Unica",st_input:"Write to the concierge…",
+    nav_products:"Assistants",nav_how:"How it works",nav_faq:"FAQ",nav_team:"Team",nav_cta:"Get in touch",
+    hero_h1:"LagoNord AI is your AI partner on Lake Garda.",
+    hero_lede:"Ready-made AI assistants for real estate, tourism &amp; hospitality — set up „done-for-you\".",
+    hero_sub:"You run your business. We build the assistant that answers, qualifies and sorts your enquiries — in German, Italian and English.",
+    hero_cta1:"Get in touch",hero_cta2:"See the assistants",
+    asst_eyebrow:"Our assistants",asst_h2:"Every industry has different enquiries — choose the right assistant for your business.",
+    estate_for:"For real estate agencies &amp; developers",estate_p:"Qualifies your property enquiries 24/7 in German, Italian and English. Budget, timeline, seriousness — pre-sorted before your agent picks up the phone.",estate_cta:"Learn more",
+    stay_for:"For hotels &amp; hosts",stay_p:"The digital concierge in the room. Guests scan the QR code, ask questions and get your own recommendations — in their language, around the clock. Runs on the same engine as our app Garda Unica and guides your guests straight to the best spots on the lake.",stay_cta:"Request a pilot",
+    unica_for:"For guests on the south shore",unica_p:"Our own consumer product: the AI travel companion for the southern Lake Garda. One recommendation per moment, honest crowd data, local knowledge. Launch: summer 2026.",unica_cta:"Go to app site",
+    soon_badge:"Coming soon",social_for:"For hotels &amp; hosts",social_p:"An agent that automatically creates social media content from your property: sunset posts, local event tips, seasonal offers — with the Lake Garda knowledge only we have. You approve, the agent delivers the drafts.",social_cta:"Register interest",
+    demo_eyebrow:"See for yourself",demo_h2:"This is how an assistant that knows your region sounds.",demo_p:"No marketing slides — this is a real qualification with LagoEstate. The assistant understands the request, asks the right questions and hands only serious leads to your team.",demo_cta:"Request a live demo",
+    chat_who:"Example · LagoEstate",chat_1:"Hello, we're looking for an apartment on Lake Garda, ideally with a lake view. What do you have available?",chat_2:"Gladly! So I can show you the right properties: are you thinking of a <b>second home</b> or an <b>investment</b> with rental income? And roughly what budget range are we in?",chat_3:"Second home, up to around €450,000. A terrace would be important.",chat_4:"Perfect. For this budget with a terrace and lake proximity, it's worth looking at <b>Padenghe and Moniga</b> — the value for money there is currently much better than in Sirmione. I've noted 3 suitable properties and I'm forwarding your enquiry to our team. When's the best time to reach you?",chat_note:"Shortened example conversation · The assistant replies in EN, DE and IT",
+    dfy_eyebrow:"„Done-for-you\"",dfy_h2:"You don't need an IT team. We set everything up.",dfy_sub:"From the first question to a running assistant — in three steps, with contacts on the ground.",
+    dfy1_h:"Get to know",dfy1_p:"We look at your business: which enquiries come in, what costs you time, where you lose revenue. First consultation free, in German or Italian.",
+    dfy2_h:"Set up",dfy2_p:"We build your assistant with your knowledge: your properties, your rooms, your recommendations. You provide the content — we handle all the technology.",
+    dfy3_h:"Go live",dfy3_p:"Your assistant works from day one. We monitor the quality, you see every conversation. Adjustments? One call is enough.",
+    pr_eyebrow:"Why LagoNord",pr_h2:"AI researches. Humans take responsibility.",
+    pr1_h:"No hallucinations",pr1_p:"Our assistants answer only from your verified knowledge. What isn't documented isn't made up — when in doubt, it's handed to you.",
+    pr2_h:"Industrial standard",pr2_p:"15+ years of international IT and management consulting go into every project. Scalable, GDPR-compliant, on European servers.",
+    pr3_h:"On site, not remote",pr3_p:"We live in Peschiera del Garda. Your region is our region — and your assistant knows it as well as we do.",
+    team_eyebrow:"Who's behind it",team_h2:"Two founders. One dog. One lake.",team_note:"Both founders come from international management and IT consulting and now live on Lake Garda. LagoNord AI is a company of <a href=\"https://www.thehouseofprompts.com\" rel=\"noopener\">The House of Prompts</a> — more about us on the <a href=\"https://www.thehouseofprompts.com/team-and-vision/\" rel=\"noopener\">team page</a>.",
+    faq_eyebrow:"Frequently asked",faq_h2:"What businesses ask us.",
+    faq1_q:"What happens if the assistant doesn't know something?",faq1_a:"Then it says so — and hands over to you. Our assistants answer exclusively from the knowledge you've provided. We prevent made-up answers („hallucinations\") technically: what isn't verified isn't claimed.",
+    faq2_q:"Is it GDPR-compliant?",faq2_a:"Yes. Hosting on European servers, no sharing of your data with third parties, data processing agreement included. On request we'll show you the full data architecture — we come from IT consulting, it's our craft.",
+    faq3_q:"How much effort is the setup for me?",faq3_a:"About 2–3 hours of your time: an introductory conversation and providing your content. The rest — technology, training, testing — we handle. That's our „done-for-you\" promise.",
+    faq4_q:"Can I see what the assistant answers?",faq4_a:"Every conversation is available to you. You stay in control: answers you don't like we correct in the assistant's knowledge — usually within a day.",
+    faq5_q:"Which languages does it work in?",faq5_a:"By default German, Italian and English — the languages of your guests and customers on Lake Garda. Other languages (e.g. Dutch) are possible.",
+    faq6_q:"What does an assistant cost?",faq6_a:"It depends on the scope. In the free first consultation you'll get a concrete estimate, with no obligation.",
+    contact_eyebrow:"Contact",contact_h2:"Let's talk about your business.",contact_p:"Agency, hotel or business on the lake — tell us which enquiries cost you time. First assessment free and non-binding, in German or Italian.",contact_cta:"Get in touch",contact_mail:"or directly: <a href=\"mailto:info@lagonord.de\">info@lagonord.de</a>",
+    foot_left:"<b>LagoNord AI</b> · Peschiera del Garda · A company of <a href=\"https://www.thehouseofprompts.com\" rel=\"noopener\">The House of Prompts</a> · © 2026",foot_contact:"Contact",foot_imprint:"Imprint",foot_privacy:"Privacy"
+  }
+};
+function setLang(lang){
+  if(!I18N[lang])lang="de";
+  const dict=I18N[lang];
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k=el.getAttribute("data-i18n");
+    if(dict[k]!==undefined)el.innerHTML=dict[k];
+  });
+  document.querySelectorAll(".lang button").forEach(b=>{
+    b.classList.toggle("active",b.dataset.lang===lang);
+  });
+  try{
+    const u=new URL(window.location);u.searchParams.set("lang",lang);
+    window.history.replaceState({},"",u);
+  }catch(e){}
+  if(typeof players!=="undefined"&&!REDUCED)players.forEach(p=>{const r=p.el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)p.start();});
+}
+(function(){
+  const params=new URLSearchParams(window.location.search);
+  let lang=params.get("lang");
+  if(!lang){
+    const nav=(navigator.language||"de").slice(0,2).toLowerCase();
+    lang=["de","it","en"].includes(nav)?nav:"de";
+  }
+  document.querySelectorAll(".lang button").forEach(b=>{
+    b.addEventListener("click",()=>setLang(b.dataset.lang));
+  });
+  setLang(lang);
+})();
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Chat-Player: Nachrichten tippen sich live ein, in Schleife */
+var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var players = [];
+function makePlayer(container){
+  const msgs = Array.from(container.querySelectorAll('.pm,.msg,.rec-card'));
+  let timer = null, ind = null;
+  function clearInd(){ if(ind){ind.remove();ind=null;} }
+  function stop(){ if(timer){clearTimeout(timer);timer=null;} clearInd(); }
+  function showAll(){ msgs.forEach(m=>m.classList.add('on')); }
+  function run(i){
+    if(i>=msgs.length){ timer=setTimeout(()=>{msgs.forEach(m=>m.classList.remove('on'));timer=setTimeout(()=>run(0),900);},4200); return; }
+    const el = msgs[i];
+    const isAi = el.classList.contains('ai')||el.classList.contains('c')||el.classList.contains('rec-card');
+    const delay = isAi?1050:650;
+    if(isAi){ ind=document.createElement('div');ind.className='typing-ind';ind.innerHTML='<i></i><i></i><i></i>';el.before(ind); }
+    timer=setTimeout(()=>{ clearInd(); el.classList.add('on');
+      if(container.dataset.chatplay==='widget' && i===msgs.length-1) litPipe();
+      timer=setTimeout(()=>run(i+1), 700);
+    }, delay);
+  }
+  function start(){ stop(); msgs.forEach(m=>m.classList.remove('on')); run(0); }
+  return { start, stop, showAll, el:container };
+}
+let pipeTimer=null;
+function litPipe(){
+  const steps=document.querySelectorAll('.pipe-step');
+  steps.forEach(st=>st.classList.remove('lit'));
+  if(pipeTimer)clearTimeout(pipeTimer);
+  let i=0;(function nxt(){ if(i<steps.length){steps[i].classList.add('lit');i++;pipeTimer=setTimeout(nxt,520);} })();
+}
+document.querySelectorAll('[data-chatplay]').forEach(c=>players.push(makePlayer(c)));
+if(REDUCED){ players.forEach(p=>p.showAll()); document.querySelectorAll('.pipe-step').forEach(st=>st.classList.add('lit')); }
+else{
+  const pio=new IntersectionObserver(es=>{es.forEach(e=>{
+    const p=players.find(x=>x.el===e.target);
+    if(!p)return; if(e.isIntersecting)p.start(); else p.stop();
+  })},{threshold:.35});
+  players.forEach(p=>pio.observe(p.el));
+}
+</script>
+</body>
+</html>
