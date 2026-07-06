@@ -105,16 +105,54 @@ h2{font-weight:700;font-size:clamp(26px,4vw,38px);line-height:1.2;letter-spacing
 .pr h3{font-size:18px;font-weight:700;margin-bottom:8px}
 .pr p{font-size:14px;color:var(--ink-soft);line-height:1.65}
 .pr .bar{width:44px;height:4px;border-radius:2px;background:var(--rame);margin-bottom:16px}
-.team-strip{display:flex;gap:16px;flex-wrap:wrap}
-.tm{display:flex;align-items:center;gap:16px;background:var(--rosa-soft);border-radius:999px;padding:12px 28px 12px 12px}
-.tm .av{width:46px;height:46px;border-radius:50%;background:var(--malva);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
-.tm:nth-child(2) .av{background:var(--cioccolato)}
-.tm:nth-child(3) .av{background:var(--rame)}
-.tm .nm{font-weight:600;font-size:15px}
-.tm .rl{font-size:11px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;font-weight:500}
-.team-note{margin-top:24px;font-size:14px;color:var(--ink-soft)}
+.team-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.team-strip{grid-template-columns:1fr}}
+.tm{
+  display:block;text-align:left;border:none;font-family:inherit;cursor:pointer;padding:0;
+  background:var(--rosa-soft);border-radius:var(--r-card);overflow:hidden;position:relative;
+  transition:transform 300ms var(--ease),box-shadow 300ms var(--ease);
+}
+.tm:hover{transform:translateY(-4px);box-shadow:0 18px 40px -14px rgba(92,64,51,.35)}
+.tm:hover .tm-zoom{opacity:1;transform:scale(1)}
+.tm .av-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--rosa)}
+.tm .av{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:42px;background:var(--malva)}
+.tm-zoom{
+  position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;
+  background:rgba(43,43,43,.55);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:17px;opacity:0;transform:scale(.7);transition:opacity 220ms var(--ease),transform 220ms var(--ease);
+}
+.tm .tm-body{padding:18px 20px 20px}
+.tm .nm{font-weight:700;font-size:17px;color:var(--ink)}
+.tm .rl{font-size:11.5px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin:3px 0 10px}
+.tm .more-link{font-size:13px;font-weight:600;color:var(--cioccolato)}
+.team-note{margin-top:28px;font-size:14px;color:var(--ink-soft)}
 .team-note a{color:var(--malva);font-weight:600;text-decoration:none}
 .team-note a:hover{text-decoration:underline}
+
+/* bio modal (rosé/copper) */
+.bio-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(43,43,43,.6);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:24px}
+.bio-overlay.open{display:flex}
+.bio-modal{
+  background:#fff;border-radius:20px;max-width:640px;width:100%;
+  display:grid;grid-template-columns:220px 1fr;overflow:hidden;position:relative;
+  box-shadow:0 40px 90px -20px rgba(43,43,43,.5);
+  animation:bioIn 320ms cubic-bezier(.2,.9,.2,1) both;
+}
+@keyframes bioIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:560px){.bio-modal{grid-template-columns:1fr}}
+.bio-photo{background:var(--rosa-soft)}
+.bio-photo img{width:100%;height:100%;object-fit:cover;display:block;min-height:220px}
+.bio-content{padding:32px 30px;overflow-y:auto;max-height:80vh}
+.bio-content h3{font-size:24px;font-weight:700;color:var(--ink)}
+.bio-content .role{margin:4px 0 16px;font-size:12px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.bio-text p{font-size:14.5px;line-height:1.75;color:var(--ink-soft);margin-bottom:12px}
+.bio-text a{color:var(--cioccolato)}
+.bio-close{
+  position:absolute;top:14px;right:14px;z-index:2;width:32px;height:32px;border-radius:50%;
+  border:none;background:rgba(43,43,43,.5);color:#fff;font-size:15px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:background 160ms var(--ease);
+}
+.bio-close:hover{background:var(--rame)}
 .faq{max-width:760px}
 .faq details{border-bottom:1px solid rgba(0,0,0,.09);padding:20px 0}
 .faq summary{cursor:pointer;font-size:17px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
@@ -470,12 +508,49 @@ footer a:hover{color:var(--ink)}
     <h2 data-i18n="team_h2">Zwei Gründer. Ein Hund. Ein See.</h2>
   </div>
   <div class="team-strip reveal">
-    <div class="tm"><img class="av-img" src="assets/cristina.jpg" alt="Cristina" onerror="this.outerHTML='<div class=&quot;av&quot;>C</div>'"><div><div class="nm">Cristina</div><div class="rl">Founder · Creative Strategy</div></div></div>
-    <div class="tm"><img class="av-img" src="assets/tim.jpg" alt="Tim" onerror="this.outerHTML='<div class=&quot;av&quot;>T</div>'"><div><div class="nm">Tim</div><div class="rl">Founder · AI &amp; Automation</div></div></div>
-    <div class="tm"><img class="av-img" src="assets/luna.jpg" alt="Luna" onerror="this.outerHTML='<div class=&quot;av&quot;>L</div>'"><div><div class="nm">Luna</div><div class="rl">Chief Happiness Officer</div></div></div>
+    <button class="tm" type="button" onclick="openBio('c')" aria-label="Cristina — Bio öffnen">
+      <img class="av-img" src="assets/cristina.jpg" alt="Cristina" onerror="this.outerHTML='<div class=&quot;av&quot;>C</div>'">
+      <span class="tm-zoom">＋</span>
+      <div class="tm-body">
+        <div class="nm">Cristina</div>
+        <div class="rl" data-i18n="c_role">Founder · Creative Strategy</div>
+        <span class="more-link" data-i18n="more">mehr erfahren →</span>
+      </div>
+    </button>
+    <button class="tm" type="button" onclick="openBio('t')" aria-label="Tim — Bio öffnen">
+      <img class="av-img" src="assets/tim.jpg" alt="Tim" onerror="this.outerHTML='<div class=&quot;av&quot;>T</div>'">
+      <span class="tm-zoom">＋</span>
+      <div class="tm-body">
+        <div class="nm">Tim</div>
+        <div class="rl" data-i18n="t_role">Founder · AI &amp; Automation</div>
+        <span class="more-link" data-i18n="more">mehr erfahren →</span>
+      </div>
+    </button>
+    <button class="tm" type="button" onclick="openBio('l')" aria-label="Luna — Bio öffnen">
+      <img class="av-img" src="assets/luna.jpg" alt="Luna" onerror="this.outerHTML='<div class=&quot;av&quot;>L</div>'">
+      <span class="tm-zoom">＋</span>
+      <div class="tm-body">
+        <div class="nm">Luna</div>
+        <div class="rl" data-i18n="l_role">Chief Happiness Officer</div>
+        <span class="more-link" data-i18n="more">mehr erfahren →</span>
+      </div>
+    </button>
   </div>
   <p class="team-note" data-i18n="team_note" data-i18n-html="1">Beide Gründer kommen aus der internationalen Management- und IT-Beratung und leben heute am Gardasee. LagoNord AI ist ein Unternehmen von <a href="https://www.thehouseofprompts.com" rel="noopener">The House of Prompts</a> — mehr über uns auf der <a href="https://www.thehouseofprompts.com/team-and-vision/" rel="noopener">Team-Seite</a>.</p>
 </section>
+
+<!-- Bio Modal -->
+<div class="bio-overlay" id="bioOverlay" onclick="if(event.target===this)closeBio()">
+  <div class="bio-modal" role="dialog" aria-modal="true" aria-labelledby="bioName">
+    <button class="bio-close" type="button" onclick="closeBio()" aria-label="Schließen">✕</button>
+    <div class="bio-photo"><img id="bioImg" src="" alt=""></div>
+    <div class="bio-content">
+      <h3 id="bioName"></h3>
+      <div class="role" id="bioRole"></div>
+      <div class="bio-text" id="bioText"></div>
+    </div>
+  </div>
+</div>
 
 <section id="faq" class="wrap" style="padding-top:0">
   <div class="sec-head">
@@ -517,6 +592,13 @@ footer a:hover{color:var(--ink)}
 <script>
 const I18N={
   de:{
+    c_role:"Founder · Creative Strategy",
+    t_role:"Founder · AI &amp; Automation",
+    l_role:"Chief Happiness Officer",
+    more:"mehr erfahren →",
+    c_long:"<p>„Als Wirtschaftsingenieurin und ehemalige Strategie-Beraterin bei der weltgrößten IT-Consultancy weiß ich, wie man Großprojekte steuert. Jahrelang habe ich globale digitale Zukunftsprojekte geleitet. Heute nutze ich diese Präzision, um Marken visuell an die Spitze zu führen. Ich verbinde technische Exzellenz mit ästhetischer Intelligenz — weg von Standard-Lösungen, hin zu maßgeschneiderten Bildwelten und Strategien, die wirken.</p><p>Diese Leidenschaft für Effizienz und Kreativität lebe ich auch privat: Als Autorin schreibe ich Kinderbücher und Kochbücher für berufstätige Eltern mit wenig Zeit. Ob im Business oder in der Küche — mein Ziel ist immer das beste Ergebnis mit smarten Lösungen.“</p>",
+    t_long:"<p>„Ich komme aus der Welt der harten Fakten und komplexen Prozesse. Als Wirtschaftsingenieur und ehemaliger Partner einer renommierten Management- &amp; IT-Beratung habe ich digitale Transformationen in der Automobilindustrie verantwortet. Ich spiele nicht mit KI, ich integriere sie. Ich baue skalierbare, sichere Architekturen für Ihren Betrieb, die den gleichen Qualitätsansprüchen genügen wie in der Industrie.“</p>",
+    l_long:"<p>„Ich bin hier die Expertin für analoge Algorithmen. Ich bin der lebende Beweis dafür, dass Natürliche Intelligenz (NI) mindestens genauso wichtig ist wie KI.“</p><p>Testet nebenbei jede Empfehlung persönlich auf Hunde-Tauglichkeit — vom Strand in Manerba bis zur Gelateria in Lazise. Folgen Sie ihren Abenteuern auf Instagram: <a href=\"https://www.instagram.com/luna_the_digital_dog/\" rel=\"noopener\">@Luna_the_Digital_dog</a></p>",
     w_role:"LagoEstate · KI-Berater",
     pipe_title:"Und im Hintergrund, vollautomatisch:",
     pipe1_h:"Lead-Rating",pipe1_p:"KI bewertet Budget, Ernsthaftigkeit &amp; Zeitrahmen",
@@ -564,6 +646,13 @@ const I18N={
     foot_left:"<b>LagoNord AI</b> · Peschiera del Garda · Ein Unternehmen von <a href=\"https://www.thehouseofprompts.com\" rel=\"noopener\">The House of Prompts</a> · © 2026",foot_contact:"Kontakt",foot_imprint:"Impressum",foot_privacy:"Datenschutz"
   },
   it:{
+    c_role:"Founder · Creative Strategy",
+    t_role:"Founder · AI &amp; Automation",
+    l_role:"Chief Happiness Officer",
+    more:"scopri di più →",
+    c_long:"<p>„Come ingegnere gestionale ed ex consulente strategica presso la più grande società di consulenza IT al mondo, so come gestire grandi progetti. Per anni ho guidato progetti digitali globali orientati al futuro. Oggi uso questa precisione per portare i brand al top visivamente. Unisco l'eccellenza tecnica all'intelligenza estetica: niente soluzioni standard, solo strategie su misura che funzionano.</p><p>Vivo questa passione per l'efficienza e la creatività anche nel privato: come autrice, scrivo libri per bambini e ricettari per genitori che lavorano e hanno poco tempo. Nel business come in cucina, il mio obiettivo è sempre ottenere il massimo risultato con soluzioni intelligenti.“</p>",
+    t_long:"<p>„Vengo dal mondo dei fatti concreti e dei processi complessi. Come ingegnere gestionale ed ex Partner di una rinomata società di consulenza IT e gestionale, ho guidato trasformazioni digitali nell'industria automobilistica. Non gioco con l'IA, la integro. Costruisco architetture scalabili e sicure per la vostra azienda, che soddisfano gli stessi standard di qualità dell'industria.“</p>",
+    l_long:"<p>„Io sono l'esperta di algoritmi analogici. Sono la prova vivente che l'Intelligenza Naturale (NI) è importante quanto l'IA.“</p><p>Testa personalmente ogni consiglio per l'idoneità ai cani — dalla spiaggia di Manerba alla gelateria di Lazise. Seguite le sue avventure su Instagram: <a href=\"https://www.instagram.com/luna_the_digital_dog/\" rel=\"noopener\">@Luna_the_Digital_dog</a></p>",
     w_role:"LagoEstate · Consulente AI",
     pipe_title:"E dietro le quinte, in automatico:",
     pipe1_h:"Lead-Rating",pipe1_p:"L'AI valuta budget, serietà e tempistiche",
@@ -611,6 +700,13 @@ const I18N={
     foot_left:"<b>LagoNord AI</b> · Peschiera del Garda · Un'azienda di <a href=\"https://www.thehouseofprompts.com\" rel=\"noopener\">The House of Prompts</a> · © 2026",foot_contact:"Contatti",foot_imprint:"Note legali",foot_privacy:"Privacy"
   },
   en:{
+    c_role:"Founder · Creative Strategy",
+    t_role:"Founder · AI &amp; Automation",
+    l_role:"Chief Happiness Officer",
+    more:"read more →",
+    c_long:"<p>„As an Industrial Engineer and former Strategy Consultant at the world's largest IT consultancy, I know how to manage major programs. I spent years leading global digital future projects. Today, I use this precision to elevate brands visually. I combine technical excellence with aesthetic intelligence — moving away from standard solutions to tailored strategies that truly work.</p><p>I channel this passion for efficiency and creativity into my personal life as well: as an author, I write children's books and cookbooks for busy parents. Whether in business or in the kitchen, my goal is always the best result through smart solutions.“</p>",
+    t_long:"<p>„I come from a world of hard facts and complex processes. As an Industrial Engineer and former Partner at a renowned Management &amp; IT consultancy, I was responsible for digital transformations in the automotive sector. I don't play with AI; I integrate it. I build scalable, secure architectures for your business that meet the same quality standards as in the industry.“</p>",
+    l_long:"<p>„I am the expert in analog algorithms. Proof that Natural Intelligence (NI) matters just as much as AI.“</p><p>She personally tests every recommendation for dog-friendliness — from the beach in Manerba to the gelateria in Lazise. Follow her adventures on Instagram: <a href=\"https://www.instagram.com/luna_the_digital_dog/\" rel=\"noopener\">@Luna_the_Digital_dog</a></p>",
     w_role:"LagoEstate · AI advisor",
     pipe_title:"And behind the scenes, fully automatic:",
     pipe1_h:"Lead rating",pipe1_p:"AI assesses budget, seriousness &amp; timeline",
@@ -666,9 +762,11 @@ function setLang(lang){
     const k=el.getAttribute("data-i18n");
     if(dict[k]!==undefined)el.innerHTML=dict[k];
   });
+  window.currentLang=lang;
   document.querySelectorAll(".lang button").forEach(b=>{
     b.classList.toggle("active",b.dataset.lang===lang);
   });
+  if(typeof refreshOpenBio==="function")refreshOpenBio();
   try{
     const u=new URL(window.location);u.searchParams.set("lang",lang);
     window.history.replaceState({},"",u);
@@ -729,6 +827,35 @@ else{
   })},{threshold:.35});
   players.forEach(p=>pio.observe(p.el));
 }
+
+/* bio modal */
+const PERSON_DATA={
+  c:{name:"Cristina",img:"assets/cristina.jpg",roleKey:"c_role",bioKey:"c_long"},
+  t:{name:"Tim",img:"assets/tim.jpg",roleKey:"t_role",bioKey:"t_long"},
+  l:{name:"Luna",img:"assets/luna.jpg",roleKey:"l_role",bioKey:"l_long"}
+};
+let openBioId=null;
+function openBio(id){
+  openBioId=id;
+  const p=PERSON_DATA[id];
+  const dict=I18N[window.currentLang||"de"];
+  document.getElementById("bioImg").src=p.img;
+  document.getElementById("bioImg").alt=p.name;
+  document.getElementById("bioName").textContent=p.name;
+  document.getElementById("bioRole").textContent=dict[p.roleKey]||"";
+  document.getElementById("bioText").innerHTML=dict[p.bioKey]||"";
+  document.getElementById("bioOverlay").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeBio(){
+  document.getElementById("bioOverlay").classList.remove("open");
+  document.body.style.overflow="";
+  openBioId=null;
+}
+function refreshOpenBio(){
+  if(openBioId)openBio(openBioId);
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeBio();});
 </script>
 </body>
 </html>
