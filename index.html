@@ -133,16 +133,16 @@ h2{font-weight:700;font-size:clamp(26px,4vw,38px);line-height:1.2;letter-spacing
 .bio-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(43,43,43,.6);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:24px}
 .bio-overlay.open{display:flex}
 .bio-modal{
-  background:#fff;border-radius:20px;max-width:640px;width:100%;
+  background:#fff;border-radius:20px;max-width:640px;width:100%;height:480px;max-height:85vh;
   display:grid;grid-template-columns:220px 1fr;overflow:hidden;position:relative;
   box-shadow:0 40px 90px -20px rgba(43,43,43,.5);
   animation:bioIn 320ms cubic-bezier(.2,.9,.2,1) both;
 }
 @keyframes bioIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
-@media(max-width:560px){.bio-modal{grid-template-columns:1fr}}
-.bio-photo{background:var(--rosa-soft)}
-.bio-photo img{width:100%;height:100%;object-fit:cover;display:block;min-height:220px}
-.bio-content{padding:32px 30px;overflow-y:auto;max-height:80vh}
+@media(max-width:560px){.bio-modal{grid-template-columns:1fr;grid-template-rows:200px 1fr;height:auto;max-height:88vh}}
+.bio-photo{background:var(--rosa-soft);overflow:hidden}
+.bio-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:200px}
+.bio-content{padding:32px 30px;overflow-y:auto;min-height:0}
 .bio-content h3{font-size:24px;font-weight:700;color:var(--ink)}
 .bio-content .role{margin:4px 0 16px;font-size:12px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
 .bio-text p{font-size:14.5px;line-height:1.75;color:var(--ink-soft);margin-bottom:12px}
@@ -592,7 +592,7 @@ footer a:hover{color:var(--ink)}
 const I18N={
   de:{
     c_role:"Founder · Creative Strategy",
-    t_role:"Founder · AI &amp; Automation",
+    t_role:"Founder · AI & Automation",
     l_role:"Chief Happiness Officer",
     more:"mehr erfahren →",
     c_long:"<p>„Als Wirtschaftsingenieurin und ehemalige Strategie-Beraterin bei der weltgrößten IT-Consultancy weiß ich, wie man Großprojekte steuert. Jahrelang habe ich globale digitale Zukunftsprojekte geleitet. Heute nutze ich diese Präzision, um Marken visuell an die Spitze zu führen. Ich verbinde technische Exzellenz mit ästhetischer Intelligenz — weg von Standard-Lösungen, hin zu maßgeschneiderten Bildwelten und Strategien, die wirken.</p><p>Diese Leidenschaft für Effizienz und Kreativität lebe ich auch privat: Als Autorin schreibe ich Kinderbücher und Kochbücher für berufstätige Eltern mit wenig Zeit. Ob im Business oder in der Küche — mein Ziel ist immer das beste Ergebnis mit smarten Lösungen.“</p>",
@@ -646,7 +646,7 @@ const I18N={
   },
   it:{
     c_role:"Founder · Creative Strategy",
-    t_role:"Founder · AI &amp; Automation",
+    t_role:"Founder · AI & Automation",
     l_role:"Chief Happiness Officer",
     more:"scopri di più →",
     c_long:"<p>„Come ingegnere gestionale ed ex consulente strategica presso la più grande società di consulenza IT al mondo, so come gestire grandi progetti. Per anni ho guidato progetti digitali globali orientati al futuro. Oggi uso questa precisione per portare i brand al top visivamente. Unisco l'eccellenza tecnica all'intelligenza estetica: niente soluzioni standard, solo strategie su misura che funzionano.</p><p>Vivo questa passione per l'efficienza e la creatività anche nel privato: come autrice, scrivo libri per bambini e ricettari per genitori che lavorano e hanno poco tempo. Nel business come in cucina, il mio obiettivo è sempre ottenere il massimo risultato con soluzioni intelligenti.“</p>",
@@ -700,7 +700,7 @@ const I18N={
   },
   en:{
     c_role:"Founder · Creative Strategy",
-    t_role:"Founder · AI &amp; Automation",
+    t_role:"Founder · AI & Automation",
     l_role:"Chief Happiness Officer",
     more:"read more →",
     c_long:"<p>„As an Industrial Engineer and former Strategy Consultant at the world's largest IT consultancy, I know how to manage major programs. I spent years leading global digital future projects. Today, I use this precision to elevate brands visually. I combine technical excellence with aesthetic intelligence — moving away from standard solutions to tailored strategies that truly work.</p><p>I channel this passion for efficiency and creativity into my personal life as well: as an author, I write children's books and cookbooks for busy parents. Whether in business or in the kitchen, my goal is always the best result through smart solutions.“</p>",
