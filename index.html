@@ -133,15 +133,15 @@ h2{font-weight:700;font-size:clamp(26px,4vw,38px);line-height:1.2;letter-spacing
 .bio-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(43,43,43,.6);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:24px}
 .bio-overlay.open{display:flex}
 .bio-modal{
-  background:#fff;border-radius:20px;max-width:640px;width:100%;height:480px;max-height:85vh;
-  display:grid;grid-template-columns:220px 1fr;overflow:hidden;position:relative;
+  background:#fff;border-radius:20px;max-width:760px;width:100%;height:560px;max-height:88vh;
+  display:grid;grid-template-columns:300px 1fr;overflow:hidden;position:relative;
   box-shadow:0 40px 90px -20px rgba(43,43,43,.5);
   animation:bioIn 320ms cubic-bezier(.2,.9,.2,1) both;
 }
 @keyframes bioIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
-@media(max-width:560px){.bio-modal{grid-template-columns:1fr;grid-template-rows:200px 1fr;height:auto;max-height:88vh}}
+@media(max-width:560px){.bio-modal{grid-template-columns:1fr;grid-template-rows:260px 1fr;height:auto;max-height:90vh}}
 .bio-photo{background:var(--rosa-soft);overflow:hidden}
-.bio-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:200px}
+.bio-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:240px}
 .bio-content{padding:32px 30px;overflow-y:auto;min-height:0}
 .bio-content h3{font-size:24px;font-weight:700;color:var(--ink)}
 .bio-content .role{margin:4px 0 16px;font-size:12px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
@@ -829,9 +829,9 @@ else{
 
 /* bio modal */
 const PERSON_DATA={
-  c:{name:"Cristina",img:"assets/cristina.jpg",roleKey:"c_role",bioKey:"c_long"},
-  t:{name:"Tim",img:"assets/tim.jpg",roleKey:"t_role",bioKey:"t_long"},
-  l:{name:"Luna",img:"assets/luna.jpg",roleKey:"l_role",bioKey:"l_long"}
+  c:{name:"Cristina",img:"assets/cristina.jpg",roleKey:"c_role",bioKey:"c_long",focus:"center top"},
+  t:{name:"Tim",img:"assets/tim.jpg",roleKey:"t_role",bioKey:"t_long",focus:"center top"},
+  l:{name:"Luna",img:"assets/luna.jpg",roleKey:"l_role",bioKey:"l_long",focus:"62% 22%"}
 };
 var openBioId=null;
 function openBio(id){
@@ -840,6 +840,7 @@ function openBio(id){
   const dict=I18N[window.currentLang||"de"];
   document.getElementById("bioImg").src=p.img;
   document.getElementById("bioImg").alt=p.name;
+  document.getElementById("bioImg").style.objectPosition=p.focus||"center top";
   document.getElementById("bioName").textContent=p.name;
   document.getElementById("bioRole").textContent=dict[p.roleKey]||"";
   document.getElementById("bioText").innerHTML=dict[p.bioKey]||"";
