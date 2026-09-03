@@ -1,1 +1,8 @@
+# macOS-Metadatei
 .DS_Store
+
+# Arbeitsprotokoll: bleibt lokal, wird nicht mehr versioniert
+FORTSCHRITT.md
+
+# Entwuerfe der Rechtstexte: bleiben lokal
+docs/rechtstexte/
