@@ -301,3 +301,39 @@ Gerät umbrechen die Nachrichten stärker und überschreiten den Chatbereich. Da
 ist die vorhandene Maske der Seite und liest sich als hochgescrollter Verlauf —
 dasselbe Verhalten wie in der Vorführung. Der Chatinhalt blieb wie verlangt
 unverändert.
+
+## 2026-09-03 23:07 CEST · Nachbesserung 3 — Abschnitt heisst „In Aktion"
+
+🟡 **Annahme notiert.** Der Auftrag nennt zwei sichtbare Stellen,
+Navigationspunkt und Abschnittsüberschrift. Das Wort „Vorführung" stand
+sichtbar aber nur an einer Stelle: im Navigationspunkt. Die Vorzeile des
+Abschnitts hiess „Sehen Sie selbst", die Überschrift lautet „Drei Betriebe,
+drei Oberflächen — dieselbe Grundlage."
+
+Gedeutet als: der Abschnitt soll dort, wo er sich selbst benennt, „In Aktion"
+heissen. Geändert wurden Navigationspunkt und Vorzeile. Die `h2` blieb
+unangetastet — sie trägt keine Abschnittsbenennung, sondern eine Aussage.
+Falls die `h2` gemeint war, ist das eine Zeile.
+
+| Stelle | vorher | nachher |
+|---|---|---|
+| Navigationspunkt | Vorführung | **In Aktion** |
+| Vorzeile des Abschnitts | Sehen Sie selbst | **In Aktion** |
+| `h2` des Abschnitts | Drei Betriebe, drei Oberflächen … | **unverändert** |
+| Knopf im Opener | Assistent in Aktion sehen | **unverändert** |
+| Anker | `#vorfuehrung` | **unverändert** |
+
+Beide Stellen tragen denselben Wortlaut und teilen sich daher einen
+Wörterbucheintrag: IT „In azione", EN „In action". Die durch die Umbenennung
+tot gewordenen Schlüssel „Vorführung" und „Sehen Sie selbst" wurden entfernt,
+statt den vom Review bemängelten Bestand an toten Schlüsseln zu vergrössern.
+
+| Prüfung | Ist |
+|---|---|
+| DE / IT / EN in Navigation und Vorzeile | **In Aktion · In azione · In action** |
+| Anker `#vorfuehrung` vorhanden | **ja** |
+| Links auf `#vorfuehrung` | **3, alle unverändert** |
+| Knopf „Assistent in Aktion sehen" | **unverändert, schaltet weiter mit** |
+
+Die Kommentare im Quelltext sprechen weiter von „Vorführung" — sie benennen
+den Anker, und der bleibt `#vorfuehrung`.

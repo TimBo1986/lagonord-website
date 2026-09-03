@@ -5,7 +5,7 @@
    t = reine Texte · h = Texte mit Auszeichnung (h1/h2, Nachrichten, Notizen) */
 window.LAGONORD_SPRACHEN = {
 "it": { "t": {
-"Leistungen":"Servizi","Beratung":"Consulenza","Beratung und Kommunikation":"Consulenza e comunicazione","Vorführung":"Dimostrazione","Ablauf":"Come lavoriamo","Warum wir":"Perché noi","Team":"Team",
+"Leistungen":"Servizi","Beratung":"Consulenza","Beratung und Kommunikation":"Consulenza e comunicazione","In Aktion":"In azione","Ablauf":"Come lavoriamo","Warum wir":"Perché noi","Team":"Team",
 "Erstgespräch":"Primo colloquio",
 "KI-Assistenten für Hotellerie, Weingüter und Makler am Gardasee — auf Ihren Betrieb zugeschnitten, nicht aus dem Regal.":"Assistenti AI per hotel, cantine e agenzie immobiliari sul lago di Garda — su misura per la vostra azienda, non preconfezionati.",
 "Sie führen Ihren Betrieb. Wir bauen den Assistenten, der Ihre Anfragen beantwortet, qualifiziert und vorsortiert — auf Deutsch, Italienisch und Englisch.":"Voi guidate la vostra azienda. Noi costruiamo l’assistente che risponde alle richieste, le qualifica e le smista — in tedesco, italiano e inglese.",
@@ -50,7 +50,7 @@ window.LAGONORD_SPRACHEN = {
 "Wer Anfragen beantwortet, muss auch gefunden werden.":"Chi risponde alle richieste deve anche farsi trovare.",
 "Social Media, Texte, Bildsprache, Bewertungsantworten — in der Sprache Ihrer Gäste. Wir besuchen jedes Haus, das wir betreuen, und schreiben keine Zeile über einen Ort, an dem wir nicht waren.":"Social media, testi, immagine, risposte alle recensioni — nella lingua dei vostri ospiti. Visitiamo ogni casa che seguiamo e non scriviamo una riga su un luogo dove non siamo stati.",
 "Anfragen →":"Contattarci →",
-"Sehen Sie selbst":"Guardate voi stessi",
+
 "Im Hotelzimmer über den QR-Code, im Posteingang eines Weinguts, auf der Website eines Maklers. Jedes Mal antwortet der Assistent aus hinterlegten Angaben — und übergibt, sobald ihm ein Beleg fehlt.":"In camera con il codice QR, nella casella di una cantina, sul sito di un’agenzia. Ogni volta l’assistente risponde da dati registrati — e passa a voi appena gli manca un riscontro.",
 "Live-Demo anfragen":"Richiedere una demo","Broschüre als PDF":"Brochure in PDF",
 "Was der Gast nicht sieht":"Quello che l’ospite non vede",
@@ -150,7 +150,7 @@ window.LAGONORD_SPRACHEN = {
 "Notiert. In dieser Spanne lohnt der Blick nach <b>Padenghe</b> und <b>Moniga</b>. Ich lege Ihre Anfrage dem Makler vor.":"Annotato. In questa fascia vale la pena guardare <b>Padenghe</b> e <b>Moniga</b>. Presento la vostra richiesta all’agenzia."
 }},
 "en": { "t": {
-"Leistungen":"Services","Beratung":"Consulting","Beratung und Kommunikation":"Consulting and communication","Vorführung":"Demo","Ablauf":"How it works","Warum wir":"Why us","Team":"Team",
+"Leistungen":"Services","Beratung":"Consulting","Beratung und Kommunikation":"Consulting and communication","In Aktion":"In action","Ablauf":"How it works","Warum wir":"Why us","Team":"Team",
 "Erstgespräch":"Intro call",
 "KI-Assistenten für Hotellerie, Weingüter und Makler am Gardasee — auf Ihren Betrieb zugeschnitten, nicht aus dem Regal.":"AI assistants for hotels, wineries and estate agents at Lake Garda — tailored to your business, not off the shelf.",
 "Sie führen Ihren Betrieb. Wir bauen den Assistenten, der Ihre Anfragen beantwortet, qualifiziert und vorsortiert — auf Deutsch, Italienisch und Englisch.":"You run your business. We build the assistant that answers, qualifies and sorts your inquiries — in German, Italian and English.",
@@ -195,7 +195,7 @@ window.LAGONORD_SPRACHEN = {
 "Wer Anfragen beantwortet, muss auch gefunden werden.":"Whoever answers inquiries must also be found.",
 "Social Media, Texte, Bildsprache, Bewertungsantworten — in der Sprache Ihrer Gäste. Wir besuchen jedes Haus, das wir betreuen, und schreiben keine Zeile über einen Ort, an dem wir nicht waren.":"Social media, copy, imagery, review replies — in your guests’ language. We visit every business we work with and never write a line about a place we haven’t been.",
 "Anfragen →":"Get in touch →",
-"Sehen Sie selbst":"See for yourself",
+
 "Im Hotelzimmer über den QR-Code, im Posteingang eines Weinguts, auf der Website eines Maklers. Jedes Mal antwortet der Assistent aus hinterlegten Angaben — und übergibt, sobald ihm ein Beleg fehlt.":"In the hotel room via QR code, in a winery’s inbox, on an agent’s website. Each time the assistant answers from stored facts — and hands over the moment evidence is missing.",
 "Live-Demo anfragen":"Request a live demo","Broschüre als PDF":"Brochure (PDF, German)",
 "Was der Gast nicht sieht":"What the guest doesn’t see",
