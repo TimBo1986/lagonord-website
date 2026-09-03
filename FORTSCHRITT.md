@@ -419,3 +419,26 @@ preparation." Der alte Schlüssel ist entfernt.
 
 Der neue Satz lässt weg, was der alte über Auftrag, Ton und Wissenszugriff je
 Rolle sagte. Das steht weiter auf den beiden Rollenkarten selbst.
+
+## 2026-09-03 23:46 CEST · Teilbarkeit nachgezogen
+
+**OG-Bild neu gerendert.** Die Unterzeile sagte „Assistenten", die freigegebene
+Copy sagt „KI-Assistenten" — im Artefakt, für das Ä8 überhaupt existiert, stand
+damit in jedem geteilten Link das abweichende Wort. Sonst unverändert:
+1200×630, 51 KB, gleiche Anlage.
+
+**Beschreibungen gekürzt.** Die alte Fassung war 169 Zeichen lang und wurde bei
+etwa 155 abgeschnitten — weg fiel gerade „auf Deutsch, Italienisch und
+Englisch", also das Unterscheidungsmerkmal. Neu fällt der einleitende Halbsatz
+weg, den der Titel ohnehin trägt; die drei Sprachen stehen jetzt im sichtbaren
+Bereich.
+
+| Sprache | Zeichen | Drei Sprachen genannt |
+|---|---|---|
+| DE | 137 | ja |
+| IT | 117 | ja |
+| EN | 127 | ja |
+
+Gesetzt an allen vier Stellen der deutschen Fassung: `meta[description]`,
+`og:description`, `twitter:description` und `META.de.d` im Skript, dazu
+`META.it.d` und `META.en.d`.
