@@ -566,3 +566,49 @@ einen Assistenten…") statt die Überschrift zu wiederholen.
 
 **Offen für Cristina** — Entwurf, nicht redigiert. Ersetzt Punkt 4 der Liste
 offener Copy-Punkte im vorigen Eintrag.
+
+## 2026-09-04 00:52 CEST · `docs/VERARBEITUNGEN.md` angelegt
+
+Grundlage für ein Verzeichnis nach Art. 30 DSGVO. Ausdrücklich **kein fertiges
+Verzeichnis und keine Rechtsberatung** — eine Bestandsaufnahme aus dem
+Quelltext, damit die Fertigstellung nicht bei null anfängt.
+
+**Aufbau.** Jede Aussage ist als 🟢 belegt oder 🔴 Lücke gekennzeichnet. Belegte
+Aussagen tragen ihre Fundstelle; der Abschnitt „Fundstellen" am Ende enthält
+die Befehle zum Nachprüfen — alle ausgeführt und für gültig befunden.
+
+**Belegt sind zwei Verarbeitungen:** die Auslieferung der Website
+(Server-Protokolle beim Hoster) und die Kontaktaufnahme per E-Mail. Mehr gibt
+die Seite nicht her — kein Cookie, kein Speicherzugriff, kein eigener Request,
+kein Formular, Schriften eingebettet.
+
+**Als Lücke benannt, nicht geraten:** E-Mail-Betrieb, KI-Assistenten und
+n8n-Workflows, Datenbank, Zoho, die App, die weiteren in `privacy.html`
+genannten Empfänger sowie die in `MAP-relaunch-v7.md` geplanten Module.
+
+### 🔴 Dabei aufgefallen — `privacy.html` widerspricht dem Repo
+
+Der schwerwiegendste Punkt, weil die Erklärung live steht:
+
+- **Hosting.** `privacy.html` nennt einen Server der Hetzner Online GmbH und
+  einen AV-Vertrag mit Hetzner. Das Repo weist auf GitHub Pages: `CNAME`,
+  GitHub-Remote, sechs Pages-Deployment-Commits, keinerlei
+  Serverkonfiguration. Eine der beiden Angaben ist falsch. Daran hängen
+  Hoster, Rechenzentrum, Drittlandübermittlung und AV-Vertrag der einzigen
+  belegten Verarbeitung.
+- **Produktnamen.** Die Erklärung beschreibt Assistenten „LagoEstate" und
+  „LagoStay"; die Seite kennt LagoHost und LagoTerra sowie fünf italienische
+  Rollennamen.
+- **Empfängerliste.** Sie nennt Dify, Google Sheets/Drive, HubSpot und die
+  WhatsApp Business API. Keiner dieser Dienste erscheint im Quelltext, und die
+  Relaunch-Map sieht eine andere Landschaft vor (n8n, Brevo, PostgreSQL,
+  Cal.com).
+- **Cookies stimmen.** Die Aussage „keine Marketing- oder Tracking-Cookies"
+  ist durch den Code bestätigt.
+
+Zwei Zahlenangaben im Dokument waren zunächst falsch (fünf statt sechs
+Pages-Commits; „zweimal `mailto:`" statt einmal — in der Fusszeile steht die
+Adresse als reiner Text). Beide vor dem Commit korrigiert und nachgeprüft.
+
+**Nicht Teil dieses Dokuments:** technische und organisatorische Massnahmen
+nach Art. 30 Abs. 1 lit. g — dazu steht im Repo nichts.
