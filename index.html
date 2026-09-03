@@ -7,9 +7,10 @@
 <meta name="description" content="LagoNord AI ist Ihr KI-Partner am Gardasee. KI-Assistenten für Hotellerie, Weingüter und Makler — auf Ihren Betrieb zugeschnitten, auf Deutsch, Italienisch und Englisch.">
 <link rel="canonical" href="https://www.lagonord.de/">
 
-<!-- Teilbarkeit (Ä8). Die Vorschau ist immer deutsch: Scraper lesen das
-     ausgelieferte Dokument, und das gibt es bis auf Weiteres nur einmal.
-     Fällt mit dem Modul sprach-urls weg. -->
+<!-- Teilbarkeit (Ä8). Die geteilte Vorschau ist immer deutsch: Scraper lesen
+     das ausgelieferte Dokument, und das gibt es bis auf Weiteres nur einmal.
+     Der Sprachumschalter zieht deshalb nur <title> und description mit; die
+     og:*- und twitter:*-Angaben bleiben stehen. Fällt mit sprach-urls weg. -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.lagonord.de/">
 <meta property="og:site_name" content="LagoNord AI">
@@ -525,8 +526,7 @@ section.blk{padding:96px 0;position:relative;overflow:hidden}
 
 /* ══ Unica Benaco als Beleg (Ä5) ══
    Mono-Beschriftungen hier in --cioccolato: --rame-tief käme auf Weiss nur auf
-   4.07:1 und bliebe unter der geforderten Schwelle. Bildseitenverhältnis 4:3
-   wie die Quelle, damit der Kupferrahmen nicht beschnitten wird. */
+   4.07:1 und bliebe unter der geforderten Schwelle. */
 .unica{margin:32px auto 0;max-width:680px;display:grid;
   grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;
   background:var(--weiss);border:1px solid var(--linie);border-radius:16px;
@@ -536,7 +536,12 @@ section.blk{padding:96px 0;position:relative;overflow:hidden}
   box-shadow:0 16px 34px rgba(201,144,111,.16)}
 /* Hochformat-Bildschirmfoto: natuerliches Seitenverhaeltnis, kein Zuschnitt.
    Rahmen und Radius lassen die Kachel als Bildschirm lesen. */
-.unica img{width:66px;border-radius:9px;border:1px solid var(--linie-stark)}
+/* Hochformat-Bildschirmfoto, kein Zuschnitt. aspect-ratio reserviert den
+   Kasten schon vor dem Laden — sonst ist die Zelle erst 66x0 und die Karte
+   samt allem darunter springt, sobald das Bild ankommt. 24/47 ist das
+   gekuerzte Verhaeltnis der Quelle und bleibt beim Verkleinern gueltig. */
+.unica img{width:66px;aspect-ratio:24/47;border-radius:9px;
+  border:1px solid var(--linie-stark)}
 .unica-text{min-width:0}
 .unica .mono{display:block;color:var(--cioccolato);font-size:9px;margin-bottom:4px}
 .unica b{display:block;font-weight:600;font-size:16.5px;color:var(--cioccolato);line-height:1.2}
@@ -551,7 +556,8 @@ section.blk{padding:96px 0;position:relative;overflow:hidden}
 
 /* ══ Demos gekennzeichnet (Ä6) ══ */
 .reiter-zeile{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin:26px 0 0}
-.reiter{margin:0}
+/* Gescoped: eine zweite Reiterleiste anderswo soll ihren Abstand behalten. */
+.reiter-zeile .reiter{margin:0}
 .szenario-marke{flex:none;color:var(--cioccolato);font-size:9px;background:var(--weiss);
   border:1px solid var(--linie-stark);border-radius:999px;padding:5px 11px}
 

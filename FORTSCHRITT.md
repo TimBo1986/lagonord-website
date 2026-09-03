@@ -337,3 +337,21 @@ statt den vom Review bemängelten Bestand an toten Schlüsseln zu vergrössern.
 
 Die Kommentare im Quelltext sprechen weiter von „Vorführung" — sie benennen
 den Anker, und der bleibt `#vorfuehrung`.
+
+---
+
+# Nacharbeit nach Code-Review
+
+Das Review lief im Hintergrund und kam erst nach den Commits `e76ce11` bis
+`d63b228` zurück. Freigabe für die Nacharbeit liegt vor.
+
+## 2026-09-03 23:24 CEST · Mechanische Defekte in `index.html`
+
+Alle vier von mir selbst in dieser Sitzung eingebaut.
+
+| Befund | Korrektur |
+|---|---|
+| `.unica img` reservierte keine Höhe. Beim Tausch auf das Hochformat hatte ich `aspect-ratio` entfernt und nur `width` gesetzt; das `<img>` trägt keine Maßattribute. Bis das Bild geladen war, war die Zelle 66×0, danach 66×129 — Karte und alles darunter sprangen. | `aspect-ratio:24/47` ergänzt. Das ist das gekürzte Verhältnis der Quelle (1080×2115) und bleibt beim Verkleinern gültig. |
+| Der Kommentar über dem Ä5-Block erklärte weiter das 4:3-Verhältnis und den „Kupferrahmen", die es beide nicht mehr gibt — und widersprach dem Kommentar acht Zeilen darunter. | Veralteten Halbsatz entfernt. |
+| `.reiter{margin:0}` stand global und war die dritte Deklaration derselben Klasse, allein durch Quellreihenfolge aufgelöst. Eine zweite Reiterleiste anderswo hätte still ihren Abstand verloren. | Auf `.reiter-zeile .reiter` gescoped. |
+| Der Kommentar im Kopf behauptete, die Vorschau sei „immer deutsch" — richtig für Scraper, aber `<title>` und `description` schalten sehr wohl mit, `og:*` und `twitter:*` nicht. | Kommentar sagt jetzt, was tatsächlich geschieht. |
