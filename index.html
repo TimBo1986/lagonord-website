@@ -561,6 +561,18 @@ section.blk{padding:96px 0;position:relative;overflow:hidden}
 .szenario-marke{flex:none;color:var(--cioccolato);font-size:9px;background:var(--weiss);
   border:1px solid var(--linie-stark);border-radius:999px;padding:5px 11px}
 
+/* ══ Beratung: eigene Kategorie, nicht noch eine Produktkachel ══
+   Flach mit Kontur statt weiss mit Schatten. Der Unterschied kommt aus
+   Flaeche und Kontur, nicht aus neuen Farben — alle Werte sind Tokens,
+   der Radius bleibt der der Zelle. Fuer die Mono-Zeile scheidet --taupe
+   aus (2.84:1 auf --crema), --ardesia traegt 6.34:1. */
+.unterzeile{font-size:17px;font-weight:300;color:var(--taupe);margin-top:10px}
+#beratung .zelle{background:transparent;border:1px solid var(--linie-stark);box-shadow:none}
+#beratung .zelle:hover{transform:none;box-shadow:none;border-color:var(--rame)}
+#beratung .zelle .pfeil{display:inline-block;transition:transform 200ms var(--ease)}
+#beratung .zelle:hover .pfeil{transform:translateX(4px)}
+.zelle .zuschnitt{color:var(--ardesia);margin-top:9px}
+
 /* ══ Aufruf (Ä7) ══ */
 .finale .auswahl{margin-top:17px;font-size:13.5px;font-weight:300;
   color:rgba(250,245,232,.62)}
@@ -704,27 +716,26 @@ section.blk{padding:96px 0;position:relative;overflow:hidden}
   <div class="wrap">
     <div class="kopfzeile zeig">
       <span class="mini">Beratung und Kommunikation</span>
-      <h2>Zwei Dinge, die <em>Menschen</em> machen.</h2>
+      <h2>Beratung, Workshops und <em>Sichtbarkeit</em>.</h2>
+      <p class="unterzeile">Zwei Dinge, die Menschen machen.</p>
       <p class="lead">Nicht alles gehört an einen Assistenten. Diese beiden Leistungen
         erbringen wir selbst — mit KI beschleunigt, aber von uns verantwortet.</p>
     </div>
     <div class="dienste">
       <a class="zelle zeig" href="#kontakt">
         <div class="name">LagoBottega</div>
-        <div class="zeile">Workshops &amp; Schulungen</div>
+        <div class="zeile">Digitalisierung &amp; KI-Workshops</div>
+        <div class="mono zuschnitt">Halbtag bis mehrtägig · Unternehmen, Betriebe, Verbände</div>
         <p class="kern">Verstehen, bevor Sie entscheiden.</p>
-        <p class="was">Von „Was ist KI?“ ohne Vorwissen bis zur Vertiefung im eigenen Betrieb —
-          für Teams, Verbände und Unternehmen im deutschsprachigen Raum. Jeder Workshop endet
-          mit Ihren Engstellen, nicht mit einer Verkaufsfolie.</p>
+        <p class="was">Von „Was ist KI?“ ohne Vorwissen bis zur Vertiefung im eigenen Betrieb — für Unternehmen, Betriebe und Verbände am Gardasee und in Norditalien. Wir machen Ihr Team handlungsfähig und nehmen dabei einen echten Engpass aus Ihrem Alltag in die Hand. Auch dort, wo es nicht um KI geht, sondern um Digitalisierung überhaupt.</p>
         <span class="pfeil">Termin anfragen →</span>
       </a>
       <a class="zelle zeig" href="#kontakt">
         <div class="name">LagoVoce</div>
-        <div class="zeile">Gestaltung &amp; Kommunikation</div>
+        <div class="zeile">Sichtbarkeit &amp; Kommunikation</div>
+        <div class="mono zuschnitt">Laufende Betreuung · Hotels, Weingüter, Gastgeber</div>
         <p class="kern">Wer Anfragen beantwortet, muss auch gefunden werden.</p>
-        <p class="was">Social Media, Texte, Bildsprache, Bewertungsantworten — in der Sprache
-          Ihrer Gäste. Wir besuchen jedes Haus, das wir betreuen, und schreiben keine Zeile
-          über einen Ort, an dem wir nicht waren.</p>
+        <p class="was">Social Media, Texte, Bildsprache, Bewertungsantworten — damit Hotels, Weingüter und Gastgeber am See dort auftauchen, wo ihre Gäste suchen. Laufend betreut, in der Sprache Ihrer Gäste, gerade auch für die Nebenzeiten.</p>
         <span class="pfeil">Anfragen →</span>
       </a>
     </div>

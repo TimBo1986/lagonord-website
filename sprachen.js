@@ -5,6 +5,13 @@
    t = reine Texte · h = Texte mit Auszeichnung (h1/h2, Nachrichten, Notizen) */
 window.LAGONORD_SPRACHEN = {
 "it": { "t": {
+"Social Media, Texte, Bildsprache, Bewertungsantworten — damit Hotels, Weingüter und Gastgeber am See dort auftauchen, wo ihre Gäste suchen. Laufend betreut, in der Sprache Ihrer Gäste, gerade auch für die Nebenzeiten.":"Social media, testi, immagine, risposte alle recensioni — perché hotel, cantine e ospitalità sul lago compaiano dove i loro ospiti cercano. Con gestione continuativa, nella lingua dei vostri ospiti, soprattutto anche per la bassa stagione.",
+"Laufende Betreuung · Hotels, Weingüter, Gastgeber":"Gestione continuativa · hotel, cantine, ospitalità",
+"Sichtbarkeit & Kommunikation":"Visibilità e comunicazione",
+"Von „Was ist KI?“ ohne Vorwissen bis zur Vertiefung im eigenen Betrieb — für Unternehmen, Betriebe und Verbände am Gardasee und in Norditalien. Wir machen Ihr Team handlungsfähig und nehmen dabei einen echten Engpass aus Ihrem Alltag in die Hand. Auch dort, wo es nicht um KI geht, sondern um Digitalisierung überhaupt.":"Da «Che cos’è l’AI?» senza prerequisiti all’approfondimento in azienda — per imprese, aziende e associazioni sul lago di Garda e nel Nord Italia. Rendiamo operativo il vostro team e affrontiamo insieme un collo di bottiglia reale del vostro lavoro quotidiano. Anche dove non si tratta di AI, ma di digitalizzazione in generale.",
+"Halbtag bis mehrtägig · Unternehmen, Betriebe, Verbände":"Da mezza giornata a più giorni · imprese, aziende, associazioni",
+"Digitalisierung & KI-Workshops":"Digitalizzazione e workshop AI",
+"Zwei Dinge, die Menschen machen.":"Due cose che fanno le persone.",
 "Leistungen":"Servizi","Beratung":"Consulenza","Beratung und Kommunikation":"Consulenza e comunicazione","In Aktion":"In azione","Ablauf":"Come lavoriamo","Warum wir":"Perché noi","Team":"Team",
 "Erstgespräch":"Primo colloquio",
 "KI-Assistenten für Hotellerie, Weingüter und Makler am Gardasee — auf Ihren Betrieb zugeschnitten, nicht aus dem Regal.":"Assistenti AI per hotel, cantine e agenzie immobiliari sul lago di Garda — su misura per la vostra azienda, non preconfezionati.",
@@ -41,13 +48,9 @@ window.LAGONORD_SPRACHEN = {
 "Nach Gespräch":"Su richiesta",
 "Belegpflicht":"Obbligo di riscontro","Geltungsbereich":"Ambito","Protokoll":"Registro","Lückenliste":"Elenco delle lacune","EU-Betrieb":"Gestione UE",
 "Nicht alles gehört an einen Assistenten. Diese beiden Leistungen erbringen wir selbst — mit KI beschleunigt, aber von uns verantwortet.":"Non tutto va affidato a un assistente. Questi due servizi li facciamo noi — accelerati dall’AI, ma sotto la nostra responsabilità.",
-"Workshops & Schulungen":"Workshop e formazione",
 "Verstehen, bevor Sie entscheiden.":"Capire, prima di decidere.",
-"Von „Was ist KI?“ ohne Vorwissen bis zur Vertiefung im eigenen Betrieb — für Teams, Verbände und Unternehmen im deutschsprachigen Raum. Jeder Workshop endet mit Ihren Engstellen, nicht mit einer Verkaufsfolie.":"Da «Che cos’è l’AI?» senza prerequisiti all’approfondimento in azienda — per team, associazioni e imprese. Ogni workshop finisce con i vostri punti critici, non con una slide di vendita.",
 "Termin anfragen →":"Richiedere una data →",
-"Gestaltung & Kommunikation":"Design e comunicazione",
 "Wer Anfragen beantwortet, muss auch gefunden werden.":"Chi risponde alle richieste deve anche farsi trovare.",
-"Social Media, Texte, Bildsprache, Bewertungsantworten — in der Sprache Ihrer Gäste. Wir besuchen jedes Haus, das wir betreuen, und schreiben keine Zeile über einen Ort, an dem wir nicht waren.":"Social media, testi, immagine, risposte alle recensioni — nella lingua dei vostri ospiti. Visitiamo ogni casa che seguiamo e non scriviamo una riga su un luogo dove non siamo stati.",
 "Anfragen →":"Contattarci →",
 
 "Im Hotelzimmer über den QR-Code, im Posteingang eines Weinguts, auf der Website eines Maklers. Jedes Mal antwortet der Assistent aus hinterlegten Angaben — und übergibt, sobald ihm ein Beleg fehlt.":"In camera con il codice QR, nella casella di una cantina, sul sito di un’agenzia. Ogni volta l’assistente risponde da dati registrati — e passa a voi appena gli manca un riscontro.",
@@ -119,11 +122,11 @@ window.LAGONORD_SPRACHEN = {
 "Gespräch vereinbaren":"Fissiamo un colloquio",
 "Impressum":"Note legali","Datenschutz":"Privacy"
 }, "h": {
+"Beratung, Workshops und <em>Sichtbarkeit</em>.":"Consulenza, workshop e <em>visibilità</em>.",
 "Zwei Gründer. Ein Hund. Ein See.":"Due fondatori. Un cane. Un lago.",
 "Ehrlich beantwortet.":"Risposte oneste.",
 "LagoNord AI ist Ihr <em>KI-Partner</em> am Gardasee.":"LagoNord AI è il vostro <em>partner AI</em> sul lago di Garda.",
 "LagoNord <em>Assistenti</em> — digitales Personal für Ihren Betrieb.":"LagoNord <em>Assistenti</em> — personale digitale per la vostra azienda.",
-"Zwei Dinge, die <em>Menschen</em> machen.":"Due cose che fanno <em>le persone</em>.",
 "Drei Betriebe, drei Oberflächen — <em>dieselbe Grundlage</em>.":"Tre aziende, tre superfici — <em>la stessa base</em>.",
 "Sie brauchen kein IT-Team. <em>Wir richten alles ein.</em>":"Non vi serve un reparto IT. <em>Configuriamo tutto noi.</em>",
 "Wir kennen beide Seiten des Sees — <em>und beide Seiten der Alpen</em>.":"Conosciamo entrambe le sponde del lago — <em>ed entrambi i lati delle Alpi</em>.",
@@ -148,6 +151,13 @@ window.LAGONORD_SPRACHEN = {
 "Notiert. In dieser Spanne lohnt der Blick nach <b>Padenghe</b> und <b>Moniga</b>. Ich lege Ihre Anfrage dem Makler vor.":"Annotato. In questa fascia vale la pena guardare <b>Padenghe</b> e <b>Moniga</b>. Presento la vostra richiesta all’agenzia."
 }},
 "en": { "t": {
+"Social Media, Texte, Bildsprache, Bewertungsantworten — damit Hotels, Weingüter und Gastgeber am See dort auftauchen, wo ihre Gäste suchen. Laufend betreut, in der Sprache Ihrer Gäste, gerade auch für die Nebenzeiten.":"Social media, copy, imagery, review responses — so that hotels, wineries and hosts on the lake show up where their guests are looking. Continuously managed, in your guests’ language, and especially for the quieter months.",
+"Laufende Betreuung · Hotels, Weingüter, Gastgeber":"Ongoing support · hotels, wineries, hosts",
+"Sichtbarkeit & Kommunikation":"Visibility & communication",
+"Von „Was ist KI?“ ohne Vorwissen bis zur Vertiefung im eigenen Betrieb — für Unternehmen, Betriebe und Verbände am Gardasee und in Norditalien. Wir machen Ihr Team handlungsfähig und nehmen dabei einen echten Engpass aus Ihrem Alltag in die Hand. Auch dort, wo es nicht um KI geht, sondern um Digitalisierung überhaupt.":"From “What is AI?” with no prior knowledge to in-depth work inside your own business — for companies, businesses and associations at Lake Garda and in northern Italy. We make your team capable of acting and take on a real bottleneck from your day-to-day along the way. Including where it isn’t about AI at all, but about digitalisation as such.",
+"Halbtag bis mehrtägig · Unternehmen, Betriebe, Verbände":"Half-day to multi-day · companies, businesses, associations",
+"Digitalisierung & KI-Workshops":"Digitalisation & AI workshops",
+"Zwei Dinge, die Menschen machen.":"Two things humans do.",
 "Leistungen":"Services","Beratung":"Consulting","Beratung und Kommunikation":"Consulting and communication","In Aktion":"In action","Ablauf":"How it works","Warum wir":"Why us","Team":"Team",
 "Erstgespräch":"Intro call",
 "KI-Assistenten für Hotellerie, Weingüter und Makler am Gardasee — auf Ihren Betrieb zugeschnitten, nicht aus dem Regal.":"AI assistants for hotels, wineries and estate agents at Lake Garda — tailored to your business, not off the shelf.",
@@ -184,13 +194,9 @@ window.LAGONORD_SPRACHEN = {
 "Nach Gespräch":"On request",
 "Belegpflicht":"Evidence required","Geltungsbereich":"Scope","Protokoll":"Log","Lückenliste":"Gap list","EU-Betrieb":"EU operation",
 "Nicht alles gehört an einen Assistenten. Diese beiden Leistungen erbringen wir selbst — mit KI beschleunigt, aber von uns verantwortet.":"Not everything belongs to an assistant. These two services we deliver ourselves — AI-accelerated, but on our responsibility.",
-"Workshops & Schulungen":"Workshops & training",
 "Verstehen, bevor Sie entscheiden.":"Understand before you decide.",
-"Von „Was ist KI?“ ohne Vorwissen bis zur Vertiefung im eigenen Betrieb — für Teams, Verbände und Unternehmen im deutschsprachigen Raum. Jeder Workshop endet mit Ihren Engstellen, nicht mit einer Verkaufsfolie.":"From “What is AI?” with no prerequisites to deep dives in your own business — for teams, associations and companies. Every workshop ends with your bottlenecks, not a sales slide.",
 "Termin anfragen →":"Request a date →",
-"Gestaltung & Kommunikation":"Design & communication",
 "Wer Anfragen beantwortet, muss auch gefunden werden.":"Whoever answers inquiries must also be found.",
-"Social Media, Texte, Bildsprache, Bewertungsantworten — in der Sprache Ihrer Gäste. Wir besuchen jedes Haus, das wir betreuen, und schreiben keine Zeile über einen Ort, an dem wir nicht waren.":"Social media, copy, imagery, review replies — in your guests’ language. We visit every business we work with and never write a line about a place we haven’t been.",
 "Anfragen →":"Get in touch →",
 
 "Im Hotelzimmer über den QR-Code, im Posteingang eines Weinguts, auf der Website eines Maklers. Jedes Mal antwortet der Assistent aus hinterlegten Angaben — und übergibt, sobald ihm ein Beleg fehlt.":"In the hotel room via QR code, in a winery’s inbox, on an agent’s website. Each time the assistant answers from stored facts — and hands over the moment evidence is missing.",
@@ -262,11 +268,11 @@ window.LAGONORD_SPRACHEN = {
 "Gespräch vereinbaren":"Book a call",
 "Impressum":"Imprint","Datenschutz":"Privacy"
 }, "h": {
+"Beratung, Workshops und <em>Sichtbarkeit</em>.":"Consulting, workshops and <em>visibility</em>.",
 "Zwei Gründer. Ein Hund. Ein See.":"Two founders. One dog. One lake.",
 "Ehrlich beantwortet.":"Answered honestly.",
 "LagoNord AI ist Ihr <em>KI-Partner</em> am Gardasee.":"LagoNord AI is your <em>AI partner</em> at Lake Garda.",
 "LagoNord <em>Assistenti</em> — digitales Personal für Ihren Betrieb.":"LagoNord <em>Assistenti</em> — digital staff for your business.",
-"Zwei Dinge, die <em>Menschen</em> machen.":"Two things <em>humans</em> do.",
 "Drei Betriebe, drei Oberflächen — <em>dieselbe Grundlage</em>.":"Three businesses, three surfaces — <em>the same foundation</em>.",
 "Sie brauchen kein IT-Team. <em>Wir richten alles ein.</em>":"You don’t need an IT team. <em>We set everything up.</em>",
 "Wir kennen beide Seiten des Sees — <em>und beide Seiten der Alpen</em>.":"We know both sides of the lake — <em>and both sides of the Alps</em>.",

@@ -482,3 +482,71 @@ ginge nur über Überschrift oder Fliesstext. **Vermerkt, nicht behoben.**
 
 **Alt-Texte bleiben deutsch.** Attribute erfasst die Sprachumschaltung nicht;
 in `CLAUDE.md` festgehalten. Fällt mit `sprach-urls`.
+
+## 2026-09-04 00:14 CEST · Abschnitt `#beratung` überarbeitet
+
+**Struktur.** Die `h2` trägt jetzt das Angebot statt des Bildes: „Beratung,
+Workshops und Sichtbarkeit." Der bisherige Satz „Zwei Dinge, die Menschen
+machen." steht als Unterzeile darunter. Die Einleitung „Nicht alles gehört an
+einen Assistenten…" ist wortgleich geblieben.
+
+🟡 **Eine Ergänzung, die nicht im Auftrag stand:** Die neue `h2` hat ein
+`<em>` um „Sichtbarkeit" bekommen. Jede andere `h2` der Seite trägt genau
+einen so ausgezeichneten Teil — ohne wäre diese die einzige ohne Kupferakzent.
+Die Unterzeile hat bewusst **kein** `<em>`, anders als die frühere `h2`: als
+Unterzeile trägt sie keinen Überschriftenakzent mehr.
+
+**Oberfläche.** Die beiden Blöcke sind jetzt flach mit Kontur statt weiss mit
+Schatten: `background:transparent` auf dem `--crema` des Abschnitts,
+`1px solid var(--linie-stark)`, kein Schatten. Beim Überfahren wechselt nur
+die Konturfarbe auf `--rame`, der Pfeil rückt 4 px nach rechts — kein Anheben
+mehr. Radius unverändert bei 22 px, keine neue Farbe, alle Werte sind Tokens.
+
+**Mono-Zeile je Block.** In der vorhandenen `.mono`-Ebene (10,5 px), keine neue
+Grösse. Sie steht unter dem Untertitel und vor der Überschrift, also als
+Qualifizierung des Angebots — bewusst nicht unten wie die `.kanal`-Zeile der
+Rollenkarten, von denen sich der Abschnitt ja gerade absetzen soll.
+
+| Kontrast der neuen Mono-Zeile auf `--crema` | |
+|---|---|
+| `--taupe` `#9A9078` | 2,84:1 — ausgeschieden |
+| `--rame-tief` `#A9714F` | 3,65:1 — ausgeschieden |
+| **`--ardesia` `#4F5872`** | **6,34:1 — gewählt** |
+
+**Aufgeräumt.** Sechs tot gewordene Schlüssel je Sprachpaar entfernt: die alte
+`h2`, beide alten Untertitel und beide alten Blocktexte.
+
+**Sachlich falsche Formulierung ist weg.** „für Teams, Verbände und Unternehmen
+im deutschsprachigen Raum" kommt in `index.html` und `sprachen.js` nicht mehr
+vor. Die verbliebene Nennung des deutschsprachigen Raums steht in `#warum`
+(„Ihre Gäste und Kunden kommen aus Deutschland, Österreich und der Schweiz")
+— das ist eine Aussage über die Gäste und bleibt richtig.
+
+| Prüfung | Ist |
+|---|---|
+| DE/IT/EN, alle 13 Felder des Abschnitts | **wechseln vollständig, keine deutschen Reste** |
+| Kontrast neue Mono-Zeilen | **6,34:1** |
+| Bei 390 / 768 / 1440 px angesehen | **alle drei in Ordnung** |
+| „deutschsprachigen Raum" als Zielgruppe | **0 Treffer** |
+| Alle Auszeichnungsblöcke lösen auf | **31/31 in IT und EN** |
+
+🟡 **Aufgefallen, nicht geändert:** Die Vorzeile lautet weiter „Beratung und
+Kommunikation" und steht jetzt unmittelbar über „Beratung, Workshops und
+Sichtbarkeit." — das doppelt sich. Die Vorzeile war meine Formulierung aus Ä4
+und ohnehin nicht freigegeben. Ein Wort von dir, dann fällt sie weg oder wird
+ersetzt.
+
+### Offene Copy-Punkte, Stand jetzt
+
+Alles Folgende ist Entwurf und **nicht von Cristina redigiert** — die
+italienischen und englischen Fassungen stammen sämtlich von mir:
+
+1. Claim im Opener (Ä1)
+2. Zeile unter dem Aufruf (Ä7)
+3. Seitentitel und Meta-Beschreibungen (Ä8, gekürzt)
+4. Vorzeile „Beratung und Kommunikation" (Ä4) — siehe Dopplung oben
+5. Die drei Zeilen der Unica-Karte (Ä5)
+6. Chip „in Vorbereitung" (Ä3)
+7. Lead über den Rollen: „Eine Grundlage, zwei Linien…"
+8. **Neu:** beide Untertitel, beide Mono-Zeilen, beide Blocktexte in
+   `#beratung`, dazu `h2` und Unterzeile
