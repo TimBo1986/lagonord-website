@@ -219,3 +219,29 @@ Stolperstelle für den Nächsten, der dort etwas einträgt.
 Geprüft mit der Ersatzkette, die das Skript selbst verwendet
 (`h[normalisiert] || h[roh]`) — die rohe Fassung trägt die mehrzeiligen
 Schlüssel wie den Fondamento-Absatz.
+
+## 2026-09-03 22:27 CEST · Nachtrag — Bild der Unica-Karte getauscht
+
+Auf Anweisung. Meine Annahme aus dem ersten Durchgang ist damit erledigt.
+
+- `assets/gardaunica.jpg` → `assets/unica_app.jpg` (Bildschirmfoto der App,
+  1080×2115, 182 KB). Das alte Bild bleibt liegen, nichts gelöscht.
+- Alt-Text von „Unica Benaco" auf „Bildschirmfoto der Unica-App" — das alte
+  beschrieb eine Karte, das neue zeigt einen Bildschirm.
+- **CSS mit angepasst, sonst wäre es falsch dargestellt worden.** Die Kachel
+  war auf `aspect-ratio:4/3` mit `object-fit:cover` gestellt; ein Hochformat
+  von 1:1,96 wäre darin auf einen Querstreifen aus der Bildmitte beschnitten
+  worden. Jetzt natürliches Seitenverhältnis ohne Zuschnitt, 66 px breit,
+  mit Rahmen und Radius, damit die Kachel als Bildschirm lesbar ist.
+
+| Prüfung | Soll | Ist |
+|---|---|---|
+| Verweis auf `gardaunica.jpg` in `index.html` | 0 | **0** |
+| Fremde Domains | 1 (unicabenaco.com) | **1** |
+| Darstellung der Karte | ohne Zuschnitt | **geprüft im Browser, 1440 px** |
+
+🟡 **Bekannte Grenze:** `alt` ist ein Attribut, kein Textknoten — die
+Sprachumschaltung fasst es nicht an. Der Alt-Text bleibt in allen drei
+Sprachen deutsch. Das gilt für alle Bilder der Seite und ist kein neuer
+Zustand; für Vorleseprogramme in IT und EN wäre es zu beheben, wenn
+`sprach-urls` kommt.

@@ -517,7 +517,9 @@ section.blk{padding:96px 0;position:relative;overflow:hidden}
   transition:border-color 220ms var(--ease),transform 220ms var(--ease),box-shadow 220ms}
 .unica:hover{border-color:var(--rame);transform:translateY(-2px);
   box-shadow:0 16px 34px rgba(201,144,111,.16)}
-.unica img{width:104px;aspect-ratio:4/3;border-radius:11px;object-fit:cover}
+/* Hochformat-Bildschirmfoto: natuerliches Seitenverhaeltnis, kein Zuschnitt.
+   Rahmen und Radius lassen die Kachel als Bildschirm lesen. */
+.unica img{width:66px;border-radius:9px;border:1px solid var(--linie-stark)}
 .unica-text{min-width:0}
 .unica .mono{display:block;color:var(--cioccolato);font-size:9px;margin-bottom:4px}
 .unica b{display:block;font-weight:600;font-size:16.5px;color:var(--cioccolato);line-height:1.2}
@@ -868,7 +870,7 @@ section.blk{padding:96px 0;position:relative;overflow:hidden}
          keine Funktionsbeschreibung. Einziger Ort, an dem ein Besucher die
          Seite verlässt. Bild liegt lokal, kein Hotlink. -->
     <a class="unica" href="https://unicabenaco.com" target="_blank" rel="noopener">
-      <img src="assets/gardaunica.jpg" alt="Unica Benaco">
+      <img src="assets/unica_app.jpg" alt="Bildschirmfoto der Unica-App">
       <div class="unica-text">
         <span class="mono">In eigener Sache</span>
         <b>Unica Benaco</b>
