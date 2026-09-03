@@ -355,3 +355,46 @@ Alle vier von mir selbst in dieser Sitzung eingebaut.
 | Der Kommentar über dem Ä5-Block erklärte weiter das 4:3-Verhältnis und den „Kupferrahmen", die es beide nicht mehr gibt — und widersprach dem Kommentar acht Zeilen darunter. | Veralteten Halbsatz entfernt. |
 | `.reiter{margin:0}` stand global und war die dritte Deklaration derselben Klasse, allein durch Quellreihenfolge aufgelöst. Eine zweite Reiterleiste anderswo hätte still ihren Abstand verloren. | Auf `.reiter-zeile .reiter` gescoped. |
 | Der Kommentar im Kopf behauptete, die Vorschau sei „immer deutsch" — richtig für Scraper, aber `<title>` und `description` schalten sehr wohl mit, `og:*` und `twitter:*` nicht. | Kommentar sagt jetzt, was tatsächlich geschieht. |
+
+## 2026-09-03 23:31 CEST · Hygiene in `CLAUDE.md` und `sprachen.js`
+
+**`CLAUDE.md`.** Die Zeilenkarte ist ganz entfernt statt aktualisiert — feste
+Zählwerte veralten still und schicken den Nächsten in den falschen Bereich.
+An ihre Stelle tritt eine Aufzählung der Abschnitte in ihrer Reihenfolge, die
+über Marker auffindbar sind (`id="schrift"`, `<section id="…">`). Aus demselben
+Grund nennt auch die `grep`-Warnung keine Zeilennummern mehr, sondern den
+Block `<style id="schrift">`.
+
+Der Pflicht-Check lautet jetzt nicht mehr „0 Treffer", sondern nennt die
+erlaubten Domains:
+
+```sh
+grep -oh 'https\?://[a-z0-9.-]*' index.html sprachen.js | sort -u
+# erlaubt: unicabenaco.com (Beleg im Team) und www.lagonord.de
+# (Open Graph und canonical brauchen absolute Adressen)
+```
+
+Zwei Ergänzungen: der Abschnitt heisst dort jetzt „In Aktion" mit dem Hinweis,
+dass der Anker `#vorfuehrung` bleibt, und ein Absatz hält fest, dass Attribute
+(`alt`, `aria-label`, `title`) von der Sprachumschaltung nicht erfasst werden.
+
+**`sprachen.js`.**
+
+- **`hx` aufgelöst.** Das englische Auszeichnungswörterbuch stand als leeres
+  `"hx": {}` im Objekt, während das echte `en.h` danach separat zugewiesen
+  wurde. Wer die Struktur von `it` nachahmte und ein `"h"` inline ergänzte,
+  wurde von der späteren Zuweisung still überschrieben. Der Inhalt steht jetzt
+  im Objekt, die separate Zuweisung ist weg. **Geprüft:** Wörterbücher vor und
+  nach dem Umbau maschinell verglichen — einziger Unterschied ist das
+  entfallene leere `hx`, alle 27 Einträge je Sprache erhalten.
+- **`"Ausserdem"` entfernt** — mit Ä4 endgültig durch „Beratung und
+  Kommunikation" ersetzt.
+- **Tote `t`-Dublette `"Reden wir über Ihren Betrieb."` entfernt.** Die Zeile
+  ist eine `h2`, die lebende Fassung steht in `h`. Wer den deutschen Wortlaut
+  ändert, hätte sonst eine der beiden übersehen.
+
+🟡 **Einem Befund des Reviews widersprochen.** Es stufte `"Website · E-Mail"`
+als tot und zu entfernen ein. Das ist der Kanal von Il Cerimoniere — derselben
+Rolle, deren Beschreibung mit Ä3 bewusst stehen blieb, weil sie zurückkommt,
+sobald die Rolle ausliefert. Der Schlüssel gehört zur selben Aussetzung und
+bleibt.

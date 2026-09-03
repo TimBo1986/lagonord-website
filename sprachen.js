@@ -40,7 +40,6 @@ window.LAGONORD_SPRACHEN = {
 "Wenn bei Ihnen etwas anderes klemmt, ist das kein Sonderfall — sondern der Ausgangspunkt für die nächste Rolle.":"Se da voi il punto critico è un altro, non è un caso particolare — è il punto di partenza del ruolo successivo.",
 "Nach Gespräch":"Su richiesta",
 "Belegpflicht":"Obbligo di riscontro","Geltungsbereich":"Ambito","Protokoll":"Registro","Lückenliste":"Elenco delle lacune","EU-Betrieb":"Gestione UE",
-"Ausserdem":"Inoltre",
 "Nicht alles gehört an einen Assistenten. Diese beiden Leistungen erbringen wir selbst — mit KI beschleunigt, aber von uns verantwortet.":"Non tutto va affidato a un assistente. Questi due servizi li facciamo noi — accelerati dall’AI, ma sotto la nostra responsabilità.",
 "Workshops & Schulungen":"Workshop e formazione",
 "Verstehen, bevor Sie entscheiden.":"Capire, prima di decidere.",
@@ -116,7 +115,6 @@ window.LAGONORD_SPRACHEN = {
 "Ihre Gäste erreichen die Assistenten auf Deutsch, Italienisch und Englisch. Mit Ihnen selbst spricht der Assistent in Ihrer Sprache. Weitere Gästesprachen sind möglich.":"I vostri ospiti raggiungono gli assistenti in tedesco, italiano e inglese. Con voi l’assistente parla nella vostra lingua. Altre lingue per gli ospiti sono possibili.",
 "Was kostet das?":"Quanto costa?",
 "Das hängt vom Umfang ab. Im kostenlosen Erstgespräch bekommen Sie eine konkrete Einschätzung — ohne Verpflichtung.":"Dipende dall’estensione. Nel primo colloquio gratuito ricevete una stima concreta — senza impegno.",
-"Reden wir über Ihren Betrieb.":"Parliamo della vostra azienda.",
 "Wir schauen uns an, wie viele Anfragen bei Ihnen eintreffen und wie lange sie heute liegen bleiben. Danach lässt sich sagen, was Ihnen wirklich etwas bringt.":"Guardiamo quante richieste vi arrivano e quanto restano ferme oggi. Poi si può dire che cosa vi serve davvero.",
 "Gespräch vereinbaren":"Fissiamo un colloquio",
 "Impressum":"Note legali","Datenschutz":"Privacy"
@@ -185,7 +183,6 @@ window.LAGONORD_SPRACHEN = {
 "Wenn bei Ihnen etwas anderes klemmt, ist das kein Sonderfall — sondern der Ausgangspunkt für die nächste Rolle.":"If something else is stuck at your place, that’s no edge case — it’s the starting point for the next role.",
 "Nach Gespräch":"On request",
 "Belegpflicht":"Evidence required","Geltungsbereich":"Scope","Protokoll":"Log","Lückenliste":"Gap list","EU-Betrieb":"EU operation",
-"Ausserdem":"And also",
 "Nicht alles gehört an einen Assistenten. Diese beiden Leistungen erbringen wir selbst — mit KI beschleunigt, aber von uns verantwortet.":"Not everything belongs to an assistant. These two services we deliver ourselves — AI-accelerated, but on our responsibility.",
 "Workshops & Schulungen":"Workshops & training",
 "Verstehen, bevor Sie entscheiden.":"Understand before you decide.",
@@ -261,14 +258,10 @@ window.LAGONORD_SPRACHEN = {
 "Ihre Gäste erreichen die Assistenten auf Deutsch, Italienisch und Englisch. Mit Ihnen selbst spricht der Assistent in Ihrer Sprache. Weitere Gästesprachen sind möglich.":"Your guests reach the assistants in German, Italian and English. With you, the assistant speaks your language. Further guest languages are possible.",
 "Was kostet das?":"What does it cost?",
 "Das hängt vom Umfang ab. Im kostenlosen Erstgespräch bekommen Sie eine konkrete Einschätzung — ohne Verpflichtung.":"That depends on scope. In the free intro call you’ll get a concrete estimate — no obligation.",
-"Reden wir über Ihren Betrieb.":"Let’s talk about your business.",
 "Wir schauen uns an, wie viele Anfragen bei Ihnen eintreffen und wie lange sie heute liegen bleiben. Danach lässt sich sagen, was Ihnen wirklich etwas bringt.":"We’ll look at how many inquiries you receive and how long they sit today. Then we can tell what will actually help you.",
 "Gespräch vereinbaren":"Book a call",
 "Impressum":"Imprint","Datenschutz":"Privacy"
-}, "hx": {} },
-};
-/* Englische Auszeichnungstexte */
-window.LAGONORD_SPRACHEN.en.h = {
+}, "h": {
 "Zwei Gründer. Ein Hund. Ein See.":"Two founders. One dog. One lake.",
 "Ehrlich beantwortet.":"Answered honestly.",
 "LagoNord AI ist Ihr <em>KI-Partner</em> am Gardasee.":"LagoNord AI is your <em>AI partner</em> at Lake Garda.",
@@ -296,6 +289,7 @@ window.LAGONORD_SPRACHEN.en.h = {
 "Gerne. <b>Zweitwohnsitz</b> oder <b>Kapitalanlage</b>? Und in welchem Budgetrahmen bewegen wir uns?":"Gladly. <b>Second home</b> or <b>investment</b>? And what budget range are we in?",
 "Zweitwohnsitz, bis etwa 450.000 €. Wichtig wäre eine Terrasse.":"Second home, up to about €450,000. A terrace would matter.",
 "Notiert. In dieser Spanne lohnt der Blick nach <b>Padenghe</b> und <b>Moniga</b>. Ich lege Ihre Anfrage dem Makler vor.":"Noted. In that range, <b>Padenghe</b> and <b>Moniga</b> are worth a look. I’ll put your inquiry to the agent."
+} },
 };
 /* Team-Biografien je Sprache — Deutsch bleibt im Dokument. */
 window.LAGONORD_BIOS = {

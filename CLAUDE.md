@@ -20,21 +20,30 @@ python3 -m http.server 8000          # falls ein echter Origin gebraucht wird
 
 # Die Prüfungen, die in diesem Repo zählen:
 grep -ri "fonts.googleapis\|fonts.gstatic" *.html    # muss 0 Treffer geben
-grep -rn "http://\|https://" index.html sprachen.js  # muss 0 Treffer geben — nichts wird extern geladen
+# Fremde Domains: erlaubt ist genau unicabenaco.com (Beleg im Team-Abschnitt).
+# www.lagonord.de erscheint ebenfalls — Open Graph und canonical verlangen
+# absolute Adressen. Alles andere ist ein Fehler.
+grep -oh 'https\?://[a-z0-9.-]*' index.html sprachen.js | sort -u
 ```
 
-**Achtung bei `grep`/`sed` auf `index.html`:** Zeilen 8–14 enthalten die
-base64-eingebetteten Schriften (~140 KB in sechs Zeilen). Ausgabe immer
-begrenzen (`cut -c1-200`) oder ab Zeile 15 lesen.
+**Achtung bei `grep`/`sed` auf `index.html`:** Der Block `<style id="schrift">`
+im Kopf enthält die base64-eingebetteten Schriften — rund 140 KB in sechs
+Zeilen. Ausgabe immer begrenzen (`cut -c1-200`) oder den Block überspringen.
 
-## Aufbau von `index.html` (968 Zeilen, in sich geschlossen)
+## Aufbau von `index.html`
 
-| Zeilen | Inhalt |
-|---|---|
-| 8–14 | `<style id="schrift">` — `@font-face` mit base64-WOFF2: Sora 300/400/500/600, JetBrains Mono 400/500 |
-| 15–437 | gesamtes CSS, Design-Tokens in `:root` |
-| 440–783 | Markup: Kopf, Opener, Leistungen, Vorführung, Ablauf, Warum, Team, FAQ, Kontakt, Bio-Popup |
-| 785–966 | gesamtes JS in einer IIFE |
+Eine in sich geschlossene Datei, in dieser Reihenfolge:
+
+1. `<style id="schrift">` — `@font-face` mit base64-WOFF2: Sora 300/400/500/600,
+   JetBrains Mono 400/500
+2. ein zweiter `<style>` — das gesamte CSS, Design-Tokens in `:root`
+3. das Markup: Kopf, Opener, Leistungen, Beratung, In Aktion, Ablauf, Warum,
+   Team, FAQ, Kontakt, Bio-Popup
+4. ein `<script>` — das gesamte JS in einer IIFE
+
+Bewusst ohne Zeilennummern: feste Zählwerte veralten still und schicken den
+Nächsten in den falschen Bereich. Die Abschnitte findet man über ihre Marker
+(`id="schrift"`, `<section id="…">`).
 
 Externe Ressourcen sind **bewusst ausgeschlossen** — Schriften sind eingebettet,
 nicht von Google Fonts geladen. Keine CDN-Links, keine Web-Fonts von fremden
@@ -72,11 +81,16 @@ Broschüren-Link: IT → `broschuere_assistenti_it.pdf`, DE **und EN** →
 nicht, der Beschriftungstext sagt das). Die Sprachwahl wird **nicht** über
 Seitenwechsel hinweg gespeichert — bekannt und offen.
 
+**Nur Textknoten und `innerHTML` werden übersetzt, keine Attribute.** `alt`,
+`aria-label` und `title` bleiben in allen drei Sprachen deutsch — das trifft
+heute den Alt-Text der Unica-Karte. Wer übersetzbaren Text in ein Attribut
+schreibt, macht ihn damit unübersetzbar.
+
 Cristina redigiert Übersetzungen in `sprachen.js`, nicht im HTML.
 
 ## Weitere Bausteine im Skript
 
-- **Vorführung:** Reiter `button[data-ziel]` schalten `.geraet[data-geraet]` und
+- **In Aktion** (Anker heisst weiter `#vorfuehrung`): Reiter `button[data-ziel]` schalten `.geraet[data-geraet]` und
   `.bandszene[data-band]` gemeinsam; `spiele()` lässt den Chat neu einlaufen.
 - **Einblendungen:** Elemente mit `.zeig` bekommen per `IntersectionObserver` die
   Klasse `.da`; die Ablauf-Punkte `.pn` leuchten gestaffelt auf.
