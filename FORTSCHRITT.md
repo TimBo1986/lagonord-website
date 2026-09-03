@@ -245,3 +245,24 @@ Sprachumschaltung fasst es nicht an. Der Alt-Text bleibt in allen drei
 Sprachen deutsch. Das gilt für alle Bilder der Seite und ist kein neuer
 Zustand; für Vorleseprogramme in IT und EN wäre es zu beheben, wenn
 `sprach-urls` kommt.
+
+## 2026-09-03 22:58 CEST · Nachbesserung 1 zu Ä2 — Gerät im Opener auf 1:2
+
+Das Gerät wirkte gedrungen (296×414, also rund 1:1,4) und las sich nicht als
+Handy. Jetzt 296×592, exakt 1:2.
+
+Umgesetzt nicht über eine geratene Chathöhe, sondern über `aspect-ratio:1/2`
+auf dem Gerät selbst: `.telefon` wird zur Flex-Spalte, Kopf und Fuss behalten
+ihre natürliche Höhe, der Chatbereich nimmt den Rest. Damit stimmt das
+Verhältnis unabhängig davon, wie hoch Kopf und Fuss ausfallen — auch wenn die
+Fusszeile in einer anderen Sprache umbricht.
+
+Die Nachrichten sitzen jetzt unten (`justify-content:flex-end`) statt oben,
+wie in einem laufenden Verlauf — dasselbe Muster wie das Gerät in der
+Vorführung. Der Chatinhalt ist unverändert, vier Nachrichten wie zuvor.
+
+| Prüfung | Soll | Ist |
+|---|---|---|
+| Seitenverhältnis bei 1440 px | ~1:2 | **296×592 = 2.00** |
+| Breite unverändert | 296 px | **296 px** |
+| Chatinhalt | unverändert | **unverändert** |

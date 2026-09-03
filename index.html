@@ -471,10 +471,14 @@ section.blk{padding:96px 0;position:relative;overflow:hidden}
 .opener .aktionen{justify-content:flex-start}
 
 .opener-geraet{min-width:0;justify-self:center;width:100%;max-width:296px}
-.opener-geraet .telefon{box-shadow:0 46px 92px rgba(0,0,0,.44)}
-/* Höhe folgt dem Inhalt: kein fester Kasten, keine Maske, kein Umbruch nach oben. */
-.opener-geraet .chat{height:auto;min-height:0;overflow:visible;justify-content:flex-start;
-  -webkit-mask-image:none;mask-image:none}
+/* Seitenverhaeltnis liegt auf dem Geraet, nicht auf einer geratenen Chathoehe:
+   1:2 bleibt so unabhaengig davon, wie hoch Kopf und Fuss ausfallen. Der
+   Chatbereich nimmt den Rest, die Nachrichten sitzen unten wie im echten
+   Verlauf — dasselbe Muster wie das Geraet in der Vorfuehrung. */
+.opener-geraet .telefon{display:flex;flex-direction:column;aspect-ratio:1/2;
+  box-shadow:0 46px 92px rgba(0,0,0,.44)}
+.opener-geraet .chat{flex:1 1 auto;height:auto;min-height:0;overflow:hidden;
+  justify-content:flex-end}
 .opener-geraet .msg{display:block;animation:none}
 
 @media (max-width:940px){
