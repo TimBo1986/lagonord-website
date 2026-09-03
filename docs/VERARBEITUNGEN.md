@@ -1,6 +1,8 @@
 # Verarbeitungen — Grundlage für ein Verzeichnis nach Art. 30 DSGVO
 
-**Stand:** 4. September 2026 · **Repo-Stand:** `b64594b`
+**Stand:** 4. September 2026 · **Repo-Stand:** `33ab37d`
+**Nachtrag vom 4. September:** Die Rechtstexte wurden ausgetauscht — Teil C
+ist dadurch weitgehend erledigt, siehe den Nachtrag dort.
 **Verantwortlich für die Fertigstellung:** Tim und Cristina
 
 ---
@@ -48,8 +50,21 @@ absichtlich leer und nicht geraten.
   Italien; das Impressum beruft sich aber auf deutsches Recht (§ 5 TMG,
   § 18 Abs. 2 MStV). Ob und wie beides zusammenpasst, ist eine Rechtsfrage —
   hier nur als Beobachtung vermerkt.
-- **Datenschutzbeauftragter:** nicht erwähnt. Ob einer zu benennen ist, hängt
-  von Umständen ab, die hier nicht sichtbar sind.
+- **Datenschutzbeauftragter:** Die Neufassung sagt jetzt ausdrücklich, dass
+  keiner bestellt ist und die Voraussetzungen nicht vorliegen.
+- 🔴 **Die Rechtsform ist ungeklärt.** Übernommen aus dem internen Hinweisblock,
+  der mit der alten `imprint.html` entfallen ist und sonst verloren gegangen
+  wäre. Er hielt fest: die Rechtsform von LagoNord AI ist nicht final geklärt,
+  Deutschland gegen Italien hat unter anderem steuerliche Folgen, und es
+  empfiehlt sich zeitnah ein Gespräch mit einer grenzüberschreitend erfahrenen
+  Steuerberatung beziehungsweise einem Commercialista vor Ort. Für das
+  Verzeichnis wird daraus die Pflichtangabe „Name und Kontaktdaten des
+  Verantwortlichen" — sie hängt an dieser Klärung.
+- 🔴 **Partita IVA.** Das Feld stand in der alten `imprint.html` als Platzhalter
+  und ist in der Neufassung ersatzlos entfallen (so entschieden). Art. 7
+  D.Lgs. 70/2003, auf den sich das Impressum jetzt selbst beruft, führt die
+  Umsatzsteuernummer unter den Pflichtangaben — sobald eine besteht, gehört sie
+  wieder hinein.
 
 ---
 
@@ -119,10 +134,17 @@ aussen gibt.
 Hier steht bewusst nichts als Inhalt. Jeder Punkt ist eine Lücke mit der
 Frage, die zu beantworten ist.
 
-### B1 · 🔴 E-Mail-Betrieb
+### B1 · 🟡 E-Mail-Betrieb — teilweise geschlossen
 
-Anbieter, Rechenzentrum, Aufbewahrung, AV-Vertrag, Zugriffsberechtigte.
-**Klärbar durch:** Tim, über MX-Einträge und das Anbieterkonto.
+Die Neufassung nennt jetzt Zoho Corporation B.V., Beneluxlaan 4B, 3527 HK
+Utrecht, Niederlande, Rechenzentren innerhalb der EU, bestehender Vertrag zur
+Auftragsverarbeitung, und Löschung nach abschliessender Bearbeitung vorbehaltlich
+steuer- und handelsrechtlicher Aufbewahrungsfristen.
+
+🔴 **Offen bleibt der Beleg.** Die Erklärung behauptet den AV-Vertrag — bei
+Hetzner hat genau diese Konstruktion sich als unzutreffend erwiesen. Vertrag,
+Rechenzentrumsstandort und Zugriffsberechtigte sind zu belegen, nicht zu
+übernehmen. **Klärbar durch:** Tim, über das Zoho-Konto.
 
 ### B2 · 🔴 KI-Assistenten und n8n-Workflows
 
@@ -180,6 +202,22 @@ Erstanbieter-Analytik einwilligungsfrei zulässig ist.
 ---
 
 ## Teil C — Widersprüche zwischen `privacy.html` und dem Quelltext
+
+> **Nachtrag, 4. September 2026.** Die Rechtstexte sind ausgetauscht
+> (`1e8c23e`, `335b764`). **C1, C2 und C3 sind damit erledigt**, C4 bestand schon
+> vorher. Die Abschnitte bleiben als Protokoll stehen, beschreiben aber den
+> Stand *vor* dem Austausch. Was die Neufassung ändert:
+>
+> - **C1** Ziffer 3 nennt jetzt GitHub Inc. mit Anschrift und Drittlandhinweis
+>   statt Hetzner. Der behauptete AV-Vertrag mit Hetzner ist weg.
+> - **C2** Die Produktnamen LagoEstate und LagoStay kommen nicht mehr vor.
+> - **C3** Dify, Google Sheets/Drive, HubSpot und WhatsApp entfallen ersatzlos —
+>   laut Tim Reste einer verworfenen Planung, diese Website lädt nichts davon.
+>
+> **Nicht erledigt, sondern verschoben:** Sollten diese Dienste anderswo im
+> Einsatz sein — etwa für Assistenten bei Kunden —, verschwindet die
+> Verarbeitung nicht dadurch, dass die Website sie nicht mehr nennt. Siehe B2
+> und B6.
 
 Diese Punkte sind **keine Vermutung**, sondern eine Gegenüberstellung von zwei
 Dokumenten, die beide im Repo liegen.
