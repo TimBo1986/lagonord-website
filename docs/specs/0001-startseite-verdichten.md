@@ -139,7 +139,8 @@ Vier Eingriffe, die den technischen Eindruck verschieben, ohne Palette oder Schr
 7. Kontrast neuer Mono-Labels ≥ 4.5:1
 8. Tastaturbedienung von Reitern und Pop-ups unverändert funktionsfähig
 9. Seite lädt vollständig im Flugmodus
-10. `FORTSCHRITT.md` mit Arbeitsprotokoll im Commit
+10. Arbeitsstand in der Commit-Meldung: was getan wurde, was geprüft wurde,
+    was offen blieb
 
 ---
 

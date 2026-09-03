@@ -112,9 +112,12 @@ macht Tim selbst — nicht ungefragt umschreiben.
 - **Commit-Meldungen auf Deutsch.**
 - Nie direkt auf `main` arbeiten: Feature-Branch, Merge macht Tim nach
   Diff-Review mit `--ff-only`.
-- Für gelieferte Aufträge liegt die Spezifikation unter `docs/TASK_*.md` und das
-  fortlaufende Arbeitsprotokoll in `FORTSCHRITT.md` (mit Zeitstempeln,
-  Prüftabellen, Abschluss mit `TASK ABGESCHLOSSEN`).
+- Für gelieferte Aufträge liegt die Spezifikation unter `docs/TASK_*.md` bzw.
+  `docs/specs/`.
+- **Der Arbeitsstand gehört in den Commit-Text, nicht in eine Datei.** Was
+  getan wurde, warum, was geprüft wurde und was offen blieb, steht in der
+  Commit-Meldung. `FORTSCHRITT.md` wird lokal weitergeführt und ist bewusst
+  nicht versioniert (siehe `.gitignore`) — sie ist Notizbuch, keine Quelle.
 - `CNAME` bleibt unangetastet — sonst fällt die Custom Domain aus.
 
 ## Bekannt und absichtlich offen

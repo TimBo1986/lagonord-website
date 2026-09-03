@@ -87,7 +87,8 @@ Diese Entscheidung fällt in `seitengeruest`, bevor Seiten entstehen.
 
 - Arbeit auf Feature-Branches, `main` unberührt, Merge durch Tim mit `--ff-only`
 - Deutsch ist Quellsprache; jede neue Sichttext-Zeichenkette braucht IT und EN
-- Arbeitsprotokoll in `FORTSCHRITT.md`, in jedem Commit
+- Arbeitsstand in der Commit-Meldung, nicht in einer Datei; `FORTSCHRITT.md`
+  läuft lokal weiter und ist nicht versioniert
 - Produkt- und Rollennamen bleiben in allen Sprachen italienisch
 - Palette und Schriftpaarung sind gesetzt und nicht Gegenstand der Module
 
