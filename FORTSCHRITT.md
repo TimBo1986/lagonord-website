@@ -442,3 +442,43 @@ Bereich.
 Gesetzt an allen vier Stellen der deutschen Fassung: `meta[description]`,
 `og:description`, `twitter:description` und `META.de.d` im Skript, dazu
 `META.it.d` und `META.en.d`.
+
+## 2026-09-03 23:52 CEST · `unica_app.jpg` verkleinert
+
+182 KB und 1080×2115 für eine Anzeige von 66 px war rund das Sechzehnfache
+dessen, was gebraucht wird — und die grösste Nutzlast, die dieser Branch
+hinzufügt, unterhalb der Falz eifrig geladen.
+
+- **192 × 376, 16,3 KB** (Güte 88). Das Format hält 24:47 exakt, also genau das
+  Verhältnis, das in `.unica img` als `aspect-ratio` steht — die
+  Höhenreservierung bleibt dadurch gültig. Bei 66 px Anzeige reicht das auch
+  bei dreifacher Pixeldichte.
+- **`loading="lazy"` ergänzt.** Das Bild sitzt im Team-Abschnitt weit unter der
+  Falz und konkurrierte bisher mit dem Opener um den ersten Aufbau.
+
+Die Fassung in voller Auflösung bleibt über die Git-Historie erreichbar
+(`d63b228`).
+
+---
+
+## Offene Punkte aus dem Review — bewusst nicht behoben
+
+**`.t-fuss` mit 2,84:1 über der Falz.** Die Fusszeile des Geräts
+(`Ihre Farben · Ihre Hausregeln · drei Sprachen`) steht in `--taupe` `#9A9078`
+auf `--crema` `#F7F2EA` bei 8,5 px, versal — 2,84:1 und damit unter der
+WCAG-AA-Schwelle von 4,5:1. Mit Ä2 ist die Komponente in den Opener gewandert
+und steht jetzt weit oben. Der Bericht zu Abnahmekriterium 7 (9,3:1) galt nur
+den in dieser Änderung neu geschriebenen Beschriftungen, nicht der von Ä2
+übernommenen Komponente.
+
+Nicht behoben: Der Fix wäre ein Token (`--cioccolato` gäbe 8,43:1), würde aber
+dieselbe Komponente in der Vorführung mitverändern — zu viel Fläche für heute.
+**Entscheidung von Tim, bewusst vertagt.**
+
+**iPhone SE (390 × 667): Knöpfe unter der Falz.** Bei dieser Höhe enden die
+Knöpfe im Opener bei 731 px. Bei 390 × 844, der zur Breite gehörenden
+Geräteklasse, stehen sie bei 731 von 844 und damit sichtbar. Weiter zu kürzen
+ginge nur über Überschrift oder Fliesstext. **Vermerkt, nicht behoben.**
+
+**Alt-Texte bleiben deutsch.** Attribute erfasst die Sprachumschaltung nicht;
+in `CLAUDE.md` festgehalten. Fällt mit `sprach-urls`.
