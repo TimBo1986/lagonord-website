@@ -101,11 +101,9 @@ window.LAGONORD_SPRACHEN = {
 "Europäische Anbieter, Auftragsverarbeitung, Löschfristen, Zweckbindung. Auf Wunsch zeigen wir Ihnen die komplette Datenarchitektur — das ist unser Handwerk.":"Fornitori europei, responsabilità del trattamento, termini di cancellazione, vincolo di finalità. Su richiesta vi mostriamo l’intera architettura dei dati — è il nostro mestiere.",
 "Wir leben am Südufer. Ihre Region ist unsere Region — wir kommen vorbei, statt Formulare zu schicken.":"Viviamo sulla sponda sud. La vostra zona è la nostra — passiamo di persona, invece di mandare moduli.",
 "Wer dahinter steht":"Chi c’è dietro",
-"Zwei Gründer. Ein Hund. Ein See.":"Due fondatori. Un cane. Un lago.",
 "mehr erfahren →":"scopri di più →",
 "Beide Gründer kommen aus der internationalen Management- und IT-Beratung und leben heute am Gardasee. Was wir für unsere Kunden bauen, betreiben wir zuerst für uns selbst.":"Entrambi i fondatori vengono dalla consulenza direzionale e IT internazionale e oggi vivono sul lago di Garda. Ciò che costruiamo per i clienti, lo usiamo prima per noi stessi.",
 "Was Betriebe uns fragen":"Che cosa ci chiedono le aziende",
-"Ehrlich beantwortet.":"Risposte oneste.",
 "Was passiert, wenn der Assistent etwas nicht weiß?":"Che cosa succede se l’assistente non sa qualcosa?",
 "Dann sagt er es — und übergibt an Sie. Die Assistenten antworten ausschließlich aus Ihrem hinterlegten Wissen; was dort nicht belegt ist, wird nicht behauptet. Fehlerfrei ist kein System dieser Art, nachvollziehbar und schnell korrigierbar schon.":"Lo dice — e passa a voi. Gli assistenti rispondono solo dalla vostra conoscenza registrata; ciò che lì non ha riscontro non viene affermato. Nessun sistema di questo tipo è privo di errori; tracciabile e correggibile in fretta sì.",
 "Ist das DSGVO-konform?":"È conforme al GDPR?",
@@ -123,6 +121,8 @@ window.LAGONORD_SPRACHEN = {
 "Gespräch vereinbaren":"Fissiamo un colloquio",
 "Impressum":"Note legali","Datenschutz":"Privacy"
 }, "h": {
+"Zwei Gründer. Ein Hund. Ein See.":"Due fondatori. Un cane. Un lago.",
+"Ehrlich beantwortet.":"Risposte oneste.",
 "LagoNord AI ist Ihr <em>KI-Partner</em> am Gardasee.":"LagoNord AI è il vostro <em>partner AI</em> sul lago di Garda.",
 "LagoNord <em>Assistenti</em> — digitales Personal für Ihren Betrieb.":"LagoNord <em>Assistenti</em> — personale digitale per la vostra azienda.",
 "Zwei Dinge, die <em>Menschen</em> machen.":"Due cose che fanno <em>le persone</em>.",
@@ -246,11 +246,9 @@ window.LAGONORD_SPRACHEN = {
 "Europäische Anbieter, Auftragsverarbeitung, Löschfristen, Zweckbindung. Auf Wunsch zeigen wir Ihnen die komplette Datenarchitektur — das ist unser Handwerk.":"European providers, data processing agreements, deletion terms, purpose limitation. On request we’ll walk you through the entire data architecture — that’s our craft.",
 "Wir leben am Südufer. Ihre Region ist unsere Region — wir kommen vorbei, statt Formulare zu schicken.":"We live on the southern shore. Your region is ours — we come by instead of sending forms.",
 "Wer dahinter steht":"Who’s behind it",
-"Zwei Gründer. Ein Hund. Ein See.":"Two founders. One dog. One lake.",
 "mehr erfahren →":"learn more →",
 "Beide Gründer kommen aus der internationalen Management- und IT-Beratung und leben heute am Gardasee. Was wir für unsere Kunden bauen, betreiben wir zuerst für uns selbst.":"Both founders come from international management and IT consulting and live at Lake Garda today. What we build for clients, we run for ourselves first.",
 "Was Betriebe uns fragen":"What businesses ask us",
-"Ehrlich beantwortet.":"Answered honestly.",
 "Was passiert, wenn der Assistent etwas nicht weiß?":"What happens when the assistant doesn’t know something?",
 "Dann sagt er es — und übergibt an Sie. Die Assistenten antworten ausschließlich aus Ihrem hinterlegten Wissen; was dort nicht belegt ist, wird nicht behauptet. Fehlerfrei ist kein System dieser Art, nachvollziehbar und schnell korrigierbar schon.":"It says so — and hands over to you. The assistants answer only from your stored knowledge; whatever isn’t sourced there is never claimed. No system of this kind is error-free; traceable and quickly correctable, yes.",
 "Ist das DSGVO-konform?":"Is this GDPR-compliant?",
@@ -271,6 +269,8 @@ window.LAGONORD_SPRACHEN = {
 };
 /* Englische Auszeichnungstexte */
 window.LAGONORD_SPRACHEN.en.h = {
+"Zwei Gründer. Ein Hund. Ein See.":"Two founders. One dog. One lake.",
+"Ehrlich beantwortet.":"Answered honestly.",
 "LagoNord AI ist Ihr <em>KI-Partner</em> am Gardasee.":"LagoNord AI is your <em>AI partner</em> at Lake Garda.",
 "LagoNord <em>Assistenti</em> — digitales Personal für Ihren Betrieb.":"LagoNord <em>Assistenti</em> — digital staff for your business.",
 "Zwei Dinge, die <em>Menschen</em> machen.":"Two things <em>humans</em> do.",

@@ -172,7 +172,9 @@ sind von mir übersetzt — Redaktion liegt bei Cristina.
   ausführlichen Beschreibungen bleiben in `sprachen.js` stehen — sie werden
   gebraucht, sobald die Rollen ausliefern.
 
-## 🟡 Gefundener Fehler im Bestand — nicht behoben
+## 🟡 Gefundener Fehler im Bestand
+
+> Nachtrag: behoben im Eintrag vom 22:31, Commit siehe dort.
 
 Zwei Überschriften wechseln in **keiner** Sprache, seit dem Relaunch v6:
 
@@ -185,3 +187,35 @@ still auf Deutsch zurück.
 
 Die Korrektur ist je Sprache eine verschobene Zeile. **Nicht ausgeführt**, weil
 ausserhalb von Ä1–Ä8. Vor aktiver Bewerbung in drei Sprachen sollte sie fallen.
+
+## 2026-09-03 22:31 CEST · Nachtrag — zwei Überschriften wechseln wieder
+
+Auf Anweisung nachgezogen, ausserhalb von Ä1–Ä8, eigener Commit.
+
+**Befund.** „Ehrlich beantwortet." (FAQ) und „Zwei Gründer. Ein Hund. Ein See."
+(Team) sind `h2` und stehen damit in `HTML_WAHL`. Das Skript sucht solche
+Elemente im Wörterbuch `h`; beide Einträge lagen in `t`. Dort konnten sie nie
+greifen — den Textknoten eines `h2` sammelt der `TreeWalker` gar nicht erst ein,
+weil `el.closest(HTML_WAHL)` ihn verwirft. Die Umschaltung fiel still auf
+Deutsch zurück, seit dem Relaunch v6.
+
+**Korrektur.** Beide Einträge aus `it.t` und `en.t` entfernt und in `it.h`
+beziehungsweise `en.h` gesetzt. Nur `sprachen.js` berührt, keine Zeile in
+`index.html`, kein Text geändert — es sind dieselben Übersetzungen wie zuvor.
+
+**Beim Prüfen aufgefallen, nicht angefasst:** Das englische Auszeichnungs-
+wörterbuch steht nicht im Hauptobjekt, sondern wird danach separat zugewiesen
+(`window.LAGONORD_SPRACHEN.en.h = {…}`). Im Hauptobjekt steht an seiner Stelle
+ein leeres `"hx": {}` — offenbar ein Überrest. Funktioniert, ist aber eine
+Stolperstelle für den Nächsten, der dort etwas einträgt.
+
+| Prüfung | Soll | Ist |
+|---|---|---|
+| `it.h` / `en.h` enthalten beide Überschriften | ja | **ja** |
+| `it.t` / `en.t` enthalten sie nicht mehr | ja | **ja** |
+| Alle Auszeichnungsblöcke der Seite finden einen Treffer | 31 / 31 | **31 / 31 in IT und EN** |
+| `node --check sprachen.js` | fehlerfrei | **fehlerfrei** |
+
+Geprüft mit der Ersatzkette, die das Skript selbst verwendet
+(`h[normalisiert] || h[roh]`) — die rohe Fassung trägt die mehrzeiligen
+Schlüssel wie den Fondamento-Absatz.
