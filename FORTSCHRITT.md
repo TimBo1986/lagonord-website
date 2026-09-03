@@ -398,3 +398,24 @@ als tot und zu entfernen ein. Das ist der Kanal von Il Cerimoniere — derselben
 Rolle, deren Beschreibung mit Ä3 bewusst stehen blieb, weil sie zurückkommt,
 sobald die Rolle ausliefert. Der Schlüssel gehört zur selben Aussetzung und
 bleibt.
+
+## 2026-09-03 23:38 CEST · Lead-Satz über den Rollen
+
+**Befund des Reviews, bestätigt.** Der Lead über dem Rollen-Schema behauptete
+weiter „fünf Rollen" und „Jede Rolle … wird einzeln eingerichtet" — vierzig
+Zeilen über dem Chip, der drei davon als unfertig ausweist. Das ist dieselbe
+Behauptungsklasse, die Ä1 entfernen soll. Mein Fehler in Ä3: ich habe die
+Karten zweistufig gemacht und den Satz stehen lassen, der sie zusammenfasst.
+
+| | Wortlaut |
+|---|---|
+| vorher | „Eine Grundlage, zwei Linien, fünf Rollen. Jede Rolle hat einen klaren Auftrag, einen eigenen Ton und Zugriff auf das hinterlegte Wissen Ihres Hauses — und wird einzeln eingerichtet." |
+| nachher | „Eine Grundlage, zwei Linien. Zwei Rollen richten wir heute ein, drei bereiten wir vor." |
+
+**Offen für Cristina** — Entwurf aus der Freigabe, nicht redigiert. IT „Una
+base, due linee. Due ruoli li attiviamo oggi, tre sono in preparazione.", EN
+„One foundation, two lines. Two roles we set up today, three are in
+preparation." Der alte Schlüssel ist entfernt.
+
+Der neue Satz lässt weg, was der alte über Auftrag, Ton und Wissenszugriff je
+Rolle sagte. Das steht weiter auf den beiden Rollenkarten selbst.
