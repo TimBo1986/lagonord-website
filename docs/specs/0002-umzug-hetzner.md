@@ -18,12 +18,11 @@ Vier Dinge hängen an derselben Entscheidung und lösen sich gemeinsam:
 2. **Das Repo ist öffentlich**, weil GitHub Pages aus privaten Repos einen
    bezahlten Plan verlangt. Damit sind Commit-Historie und Arbeitsnotizen
    für jeden lesbar.
-3. **Ziffer 3 der Datenschutzerklärung wird zutreffend.** Sie nennt heute
-   schon Hetzner und ist damit falsch, weil GitHub Pages ausliefert — und
-   enthält gerade deshalb *keinen* Drittlandhinweis, obwohl die Auslieferung
-   heute in den USA liegt. Nach dem Umzug stimmt die Angabe, und ein Hinweis
-   wird auch nicht nötig. **Der USA-Absatz in Ziffer 7 bleibt davon
-   unberührt** — er betrifft Google, HubSpot und Meta, nicht das Hosting.
+3. **Der Drittlandhinweis entfällt.** Die Neufassung nennt in Ziffer 3
+   GitHub Inc. und die Übermittlung in die USA — korrekt, aber es ist die
+   schwächste Stelle einer Erklärung, die europäische Infrastruktur verspricht.
+   Nach dem Umzug fällt der Absatz ersatzlos weg. Die Erklärung wird kürzer und
+   die Aussage stärker.
 4. **Rückkanal und Messung brauchen ohnehin diesen Server.** Formular über
    n8n, Terminbuchung über Cal.com, Analytik. Getrennt umzuziehen wäre
    doppelte Arbeit.
@@ -65,33 +64,32 @@ Git-Installation auf dem Webserver. Beide sind vertretbar.
 
 ### T4 — Datenschutzerklärung nachziehen
 
-**Im selben Zug, nicht danach — aber aus dem umgekehrten Grund.** Ziffer 3
-nennt **heute schon Hetzner** („Diese Website wird auf einem Server der Hetzner
-Online GmbH … gehostet. Mit Hetzner besteht ein Auftragsverarbeitungsvertrag"),
-unverändert seit `5e087a2`. Ausgeliefert wird die Seite aber von GitHub Pages —
-belegt durch `CNAME`, den GitHub-Remote, sechs Pages-Deployment-Commits und das
-Fehlen jeder Server- oder Containerkonfiguration.
+**Im selben Zug, nicht danach.** Die Neufassung beschreibt den Ist-Zustand
+korrekt: Ziffer 3 nennt GitHub Pages, GitHub Inc., San Francisco, als Anbieter
+und trägt den Hinweis auf die Übermittlung in die USA samt
+Standardvertragsklauseln. Ziffer 2 sagt „keine Analyse- oder Trackingdienste".
 
-**Die Angabe ist also jetzt falsch und wird durch den Umzug richtig**, nicht
-umgekehrt. Das ändert die Dringlichkeit: es ist kein Folgeschritt, den der
-Umzug auslöst, sondern eine unzutreffende Aussage, die live steht — samt einem
-AV-Vertrag, der einem Anbieter zugeschrieben wird, der die Seite nicht
-ausliefert.
+Damit ist T4 ein **Tausch des Hosters**, keine Korrektur mehr:
 
-**Geprüft werden muss der Text trotzdem im selben Zug**, denn richtig wird die
-Angabe nicht dadurch, dass sie zufällig zum Zielzustand passt. Zu belegen sind:
-
-- der **AV-Vertrag** mit Hetzner — abgeschlossen, gegengezeichnet, auffindbar
-- das **Rechenzentrum**, in dem der Server tatsächlich steht (Hetzner betreibt
-  auch Standorte ausserhalb Deutschlands)
-- dass der **Absatz zur Übermittlung in die USA** danach wirklich entfallen
-  kann — also kein weiterer Dienst im Auslieferungspfad bleibt
-
-Ziffer 3 ist danach zu bestätigen oder zu korrigieren: Hetzner Online GmbH,
-Industriestraße 25, 91710 Gunzenhausen, mit dem belegten Rechenzentrum und dem
-belegten AV-Vertrag.
+- Ziffer 3: GitHub Inc. → Hetzner Online GmbH, Industriestraße 25, 91710
+  Gunzenhausen, mit dem Rechenzentrum, in dem der Server tatsächlich steht
+- Der Absatz „Übermittlung in die USA" in Ziffer 3 entfällt ersatzlos
+- Der Satz „Wir haben keinen Zugriff auf diese Logfiles und werten sie nicht
+  aus" gilt nach dem Umzug nicht mehr — auf dem eigenen Server liegen die Logs
+  bei uns. Er ist zu ersetzen, nicht zu streichen: Zweck, Rechtsgrundlage und
+  **Löschfrist** der eigenen Logs gehören hinein
+- **AV-Vertrag mit Hetzner** muss vor der Umstellung vorliegen und auffindbar
+  sein. Die Altfassung hat ihn behauptet, ohne dass er belegt war — dieser
+  Fehler darf sich nicht wiederholen
 
 Ebenso: `docs/VERARBEITUNGEN.md` aktualisieren.
+
+🔴 **Voraussetzung, die noch aussteht.** Ausgeliefert wird weiterhin die alte
+`privacy.html` (unverändert seit `5e087a2`, nennt fälschlich Hetzner). Von der
+Neufassung liegt bisher nur die **italienische** Fassung vor
+(`docs/rechtstexte/datenschutz-lagonord-it.md`). Solange die deutsche
+Neufassung nicht in `privacy.html` steht, beschreibt dieser Abschnitt einen
+Zustand, den es noch nicht gibt.
 
 ### T5 — Repo auf privat
 
@@ -131,13 +129,9 @@ nicht.
 zulässig ist, wird uneinheitlich beurteilt. Vor dem Livegang klären. Das ist
 eine Rechtsfrage, keine technische.
 
-**Ziffer 9 der Datenschutzerklärung ist zu ergänzen** — nicht Ziffer 2, und
-der Satz lautet dort anders als hier bisher angenommen: „Diese Website
-verwendet aktuell keine Marketing- oder **Tracking-Cookies**." Eine cookielose
-Erstanbieter-Analytik macht diesen Satz streng genommen nicht unwahr, weil er
-nur von Cookies spricht. Ziffer 9 sagt aber selbst zu, die Erklärung zu
-aktualisieren, „sollte sich dies ändern (z. B. durch den Einsatz von
-Analyse-Tools)" — genau dieser Fall tritt ein.
+**Ziffer 2 der Datenschutzerklärung wird dadurch unwahr.** Die Neufassung sagt
+dort „keine Analyse- oder Trackingdienste" — eine Erstanbieter-Analytik ist ein
+Analysedienst, auch ohne Cookies und auf eigenem Server.
 
 Neue Formulierung etwa: „keine Dienste Dritter, keine Cookies, Auswertung auf
 eigenen Servern in Deutschland."
