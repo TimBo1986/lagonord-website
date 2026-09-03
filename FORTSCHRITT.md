@@ -550,3 +550,19 @@ italienischen und englischen Fassungen stammen sämtlich von mir:
 7. Lead über den Rollen: „Eine Grundlage, zwei Linien…"
 8. **Neu:** beide Untertitel, beide Mono-Zeilen, beide Blocktexte in
    `#beratung`, dazu `h2` und Unterzeile
+
+## 2026-09-04 00:23 CEST · Vorzeile `#beratung` entdoppelt
+
+Die im vorigen Eintrag vermerkte Dopplung ist aufgelöst: die Vorzeile lautete
+„Beratung und Kommunikation" und stand unmittelbar über „Beratung, Workshops
+und Sichtbarkeit."
+
+Neu: **„Ausser Assistenten"** — IT „Oltre agli assistenti", EN „Beyond the
+assistants". Der alte Schlüssel ist aus beiden Wörterbüchern entfernt. Der
+Navigationspunkt „Beratung" ist ein eigener Schlüssel und bleibt unberührt.
+
+Die Vorzeile greift jetzt die Einleitung darunter auf („Nicht alles gehört an
+einen Assistenten…") statt die Überschrift zu wiederholen.
+
+**Offen für Cristina** — Entwurf, nicht redigiert. Ersetzt Punkt 4 der Liste
+offener Copy-Punkte im vorigen Eintrag.
