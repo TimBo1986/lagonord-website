@@ -95,3 +95,93 @@ Dateien wurde nichts geändert.
 - `5e087a2` — Rechtsseiten: Google-Fonts entfernt, Poppins durch system-ui ersetzt (Schritt 4)
 
 **Merge auf `main`:** liegt bei Tim — nach Diff-Review, ausschließlich `--ff-only`.
+
+---
+
+# Fortschritt — Spec 0001 · Startseite verdichten und teilbar machen
+
+Arbeitsprotokoll zu `docs/specs/0001-startseite-verdichten.md`.
+Branch: `feature/startseite-v6-1` (Basis `main`, Stand `aeaab28`).
+Merge auf `main` liegt bei Tim, `--ff-only`.
+
+## 2026-09-03 22:13 CEST · Ä1 bis Ä8 umgesetzt
+
+Ä9 (Verdichtung) auf Anweisung ausgelassen und für später offen.
+
+| Änderung | Was geschah |
+|---|---|
+| **Ä1** Zustandsbehauptungen | „Fertige" und „Done-for-you" entfernt: Claim, Meta-Beschreibung, `META`-Tabelle im Skript (de/it/en) und FAQ-Schlusssatz. Die deutschen Sätze waren zugleich Wörterbuchschlüssel — IT und EN wurden mitgezogen. |
+| **Ä2** Produktfläche im Opener | Opener von mittig auf zweispaltig: Text links, Telefon rechts, Fußpunkte darunter über volle Breite. Vier Nachrichten wortgleich aus der Vorführung übernommen. |
+| **Ä3** Rollen zweistufig | Il Segretario und Il Portiere als volle Karten ohne Status-Label. Darunter gestrichelte Zeile mit Mono-Chip `in Vorbereitung` und Il Ricordo · L'Agenda · Il Cerimoniere. „Und was noch fehlt" wortgleich als eigene Karte. |
+| **Ä4** Beratung nach vorn | LagoBottega und LagoVoce als eigener Abschnitt `#beratung` zwischen Leistungen und Vorführung, mit Navigationspunkt. Einleitung wortgleich. |
+| **Ä5** Unica Benaco | Karte unter dem Team-Schlusssatz: Bild, drei Zeilen, Link mit `rel="noopener"`. Kein Abschnitt, kein Navigationspunkt, keine Funktionsbeschreibung. |
+| **Ä6** Demos gekennzeichnet | Mono-Chip `Beispielszenario` neben der Reiterleiste. |
+| **Ä7** Aufruf geschärft | Zeile unter dem Knopf im Schlussabschnitt. |
+| **Ä8** Teilbarkeit | Open Graph und Twitter Card vollständig, `canonical`, neuer Titel in drei Sprachen, OG-Bild `assets/og.jpg` (1200×630, 50 KB). |
+
+## Prüfungen
+
+| Abnahmekriterium | Soll | Ist |
+|---|---|---|
+| 1 · `grep -ci "fertige\|done-for-you"` | 0 / 0 | **0 / 0** |
+| 2 · externe Verweise | 1 (unicabenaco.com) | **1 fremd + 4 auf die eigene Domain** — siehe 🟡 unten |
+| 3 · neue Texte in IT und EN | vollständig | **8 / 8 belegt, kein Ungleichgewicht IT↔EN** |
+| 4 · `documentElement.lang` schaltet mit | ja | **ja**, im Browser geprüft (DE→IT) |
+| 5 · Open-Graph-Vorschau | korrekt | **Tags gesetzt, Bild vorhanden** — Vorschau in WhatsApp/LinkedIn erst nach Livegang prüfbar |
+| 6 · keine neue Datei ausser Bildern | — | **nur `assets/og.jpg`**, kein `package.json` |
+| 7 · Kontrast neuer Mono-Labels | ≥ 4.5:1 | **9.3:1** (`--cioccolato` auf `--weiss`) |
+| 8 · Tastaturbedienung unverändert | ja | **ja**, `role="tablist"` unangetastet, Chip steht ausserhalb |
+| 9 · lädt im Flugmodus | ja | **ja**, kein neuer Request beim Laden; die absoluten OG-Adressen liest nur der Scraper |
+| 10 · Arbeitsprotokoll im Commit | ja | **dieser Eintrag** |
+
+## Offen für Cristina — Copy
+
+Alle drei sind Entwürfe aus der Spec, unverändert übernommen, nicht freigegeben:
+
+1. **Ä1, Claim im Opener:** „KI-Assistenten für Hotellerie, Weingüter und Makler am Gardasee — auf Ihren Betrieb zugeschnitten, nicht aus dem Regal."
+2. **Ä7, Zeile unter dem Aufruf:** „Wir arbeiten mit wenigen Häusern gleichzeitig. Erstgespräch kostenlos."
+3. **Ä8, Seitentitel:** „LagoNord AI — KI-Assistenten für Betriebe am Gardasee" (bisher „… — Ihr KI-Partner am Gardasee").
+
+Dazu von mir formuliert und ebenfalls unfreigegeben:
+
+4. **Ä4, Vorzeile:** „Beratung und Kommunikation" statt „Ausserdem".
+5. **Ä5, drei Zeilen:** „In eigener Sache" / „Unica Benaco" / „Unsere eigene Adresse am Gardasee — dort betreiben wir selbst, was wir hier beschreiben."
+6. **Ä3, Chip:** „in Vorbereitung".
+
+Die italienischen und englischen Fassungen aller sechs stehen in `sprachen.js` und
+sind von mir übersetzt — Redaktion liegt bei Cristina.
+
+## 🟡 Annahmen und Abweichungen
+
+- **Bild für die Unica-Zeile angenommen.** Die Spec führt die Bildauswahl als offen.
+  Ich habe `assets/gardaunica.jpg` genommen: lag ungenutzt im Repo, zeigt eine
+  Gardasee-Karte im Kupferrahmen, passt dem Namen nach. **Nicht bestätigt.**
+  Austausch ist eine Zeile in `index.html`.
+- **Abnahmekriterium 2 gelesen als „keine fremden Domains".** Open Graph verlangt
+  absolute Adressen; `og:url`, `og:image`, `twitter:image` und `canonical` zeigen
+  deshalb viermal auf `www.lagonord.de`. Fremd ist weiterhin genau eine Domain:
+  unicabenaco.com. Wörtlich gezählt reisst der Grep das Kriterium.
+- **Navigationspunkt „Beratung" hinzugefügt.** Die Spec verlangt für Ä4 einen
+  Ankerpunkt; ein Anker, auf den nichts zeigt, ist keiner. Die Navigation hat
+  jetzt sechs statt fünf Einträge.
+- **Opener von mittig auf zweispaltig.** Ä2 gibt das Gerät vor, nicht die Anlage.
+  Mittig hätte das Telefon unter die Knöpfe und damit unter die Falz gedrückt —
+  genau der Effekt, den Ä2 beheben soll.
+- **Rollen-Halbsätze aus dem Bestand.** Für die drei angedeuteten Rollen habe ich
+  die vorhandenen `amt`-Zeilen genommen statt neue Copy zu erfinden. Die
+  ausführlichen Beschreibungen bleiben in `sprachen.js` stehen — sie werden
+  gebraucht, sobald die Rollen ausliefern.
+
+## 🟡 Gefundener Fehler im Bestand — nicht behoben
+
+Zwei Überschriften wechseln in **keiner** Sprache, seit dem Relaunch v6:
+
+- „Ehrlich beantwortet." (FAQ)
+- „Zwei Gründer. Ein Hund. Ein See." (Team)
+
+Beide sind `h2` und werden vom Skript im Wörterbuch `h` gesucht, stehen in
+`sprachen.js` aber unter `t`. Der Treffer bleibt aus, die Umschaltung fällt
+still auf Deutsch zurück.
+
+Die Korrektur ist je Sprache eine verschobene Zeile. **Nicht ausgeführt**, weil
+ausserhalb von Ä1–Ä8. Vor aktiver Bewerbung in drei Sprachen sollte sie fallen.
