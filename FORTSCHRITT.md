@@ -266,3 +266,38 @@ Vorführung. Der Chatinhalt ist unverändert, vier Nachrichten wie zuvor.
 | Seitenverhältnis bei 1440 px | ~1:2 | **296×592 = 2.00** |
 | Breite unverändert | 296 px | **296 px** |
 | Chatinhalt | unverändert | **unverändert** |
+
+## 2026-09-03 23:01 CEST · Nachbesserung 2 zu Ä2 — Opener über drei Breiten
+
+Gemessen in einem iframe fester Breite, weil das Browserfenster gezoomt
+rendert und keine exakten Viewport-Breiten liefert.
+
+**Befund vorher.** Der Opener hing am globalen Umbruchpunkt 940 px. Bei 768 px
+fiel das Gerät damit unter den Text und stand mit 284 px in einer 724 px
+breiten Spalte — daher der Leerraum. Bei 390 px war es mit 284 px viel zu
+gross, die Knöpfe endeten bei 807 von 844 px.
+
+**Geändert.** Der Opener bekommt eigene Umbruchpunkte:
+
+- **bis 1100 px:** bleibt zweispaltig, Gerät tritt auf 238 px zurück,
+  Spaltenverhältnis 1,25 : 0,75 zugunsten des Textes
+- **bis 700 px:** erst hier untereinander. Gerät auf 186 px, Logo auf 196 px,
+  Aussenabstand des Openers von 72/68 auf 44/52, Satz und Knopfabstand knapper
+
+| Breite | Anlage | Gerät | Claim sichtbar | Knöpfe sichtbar |
+|---|---|---|---|---|
+| 390 × 844 | einspaltig, Gerät unter dem Text | 186 × 372 | **ja** (462) | **ja** (731) |
+| 768 × 1024 | zweispaltig, Gerät neben dem Text | 238 × 476 | **ja** (529) | **ja** (784) |
+| 1440 × 900 | zweispaltig, unverändert | 296 × 592 | **ja** (623) | **ja** (813) |
+
+🟡 **Zwei Fälle ausserhalb der Vorgabe, die nicht passen:** Bei 390 × 667
+(Geräteklasse 375 px, etwa iPhone SE) enden die Knöpfe bei 731 und liegen
+unter der Falz; bei 1024 × 768 (Tablet quer) bei 793. Beide Höhen waren nicht
+gefordert — 390 px Breite entspricht 844 px Höhe. Weiter zu kürzen ginge nur
+über Überschrift oder Fliesstext, das ist eine Gestaltungsentscheidung.
+
+🟡 **Bei 768 px läuft die oberste Chatnachricht oben weich aus.** Im schmaleren
+Gerät umbrechen die Nachrichten stärker und überschreiten den Chatbereich. Das
+ist die vorhandene Maske der Seite und liest sich als hochgescrollter Verlauf —
+dasselbe Verhalten wie in der Vorführung. Der Chatinhalt blieb wie verlangt
+unverändert.

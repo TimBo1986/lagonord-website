@@ -481,9 +481,22 @@ section.blk{padding:96px 0;position:relative;overflow:hidden}
   justify-content:flex-end}
 .opener-geraet .msg{display:block;animation:none}
 
-@media (max-width:940px){
-  .opener-grid{grid-template-columns:1fr;gap:38px}
-  .opener-geraet{max-width:284px;justify-self:start}
+/* Der Opener bekommt eigene Umbruchpunkte statt der globalen 940 px.
+   Tablet: zweispaltig halten — das Geraet gehoert neben den Text, nicht
+   darunter mit einer halben leeren Spalte daneben. Es tritt dafuer zurueck. */
+@media (max-width:1100px){
+  .opener-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:36px}
+  .opener-geraet{max-width:238px}
+}
+/* Handy: erst hier untereinander. Das Geraet wird deutlich kleiner, und der
+   Kopfbereich rueckt zusammen, damit Claim und Knoepfe ohne Scrollen stehen. */
+@media (max-width:700px){
+  .opener{padding:44px 0 52px}
+  .opener-grid{grid-template-columns:1fr;gap:30px}
+  .opener .marke{width:196px;max-width:60%;margin-bottom:22px}
+  .opener .satz{font-size:15.5px}
+  .opener .aktionen{margin-top:26px}
+  .opener-geraet{max-width:186px;justify-self:start}
 }
 
 /* ══ Rollen zweistufig (Ä3) ══
